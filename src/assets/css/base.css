@@ -1,0 +1,11 @@
+@import "./normalize.css";
+
+:root{
+  --color:red;
+}
+
+body{
+  background-image: url(../img/home/360wallpaper.jpg);
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+}

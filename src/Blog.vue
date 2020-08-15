@@ -1,5 +1,5 @@
 <template>
-  <div id="Blog">
+  <div id="blog">
 
   </div>
 </template>
@@ -16,5 +16,8 @@ export default {
 </script>
 
 <style>
+/* 样式初始化 */
+@import "./assets/css/base.css";
+
 
 </style>
