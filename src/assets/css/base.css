@@ -1,11 +1,23 @@
 @import "./normalize.css";
-
-:root{
-  --color:red;
+@font-face {
+  font-family: "ios7";
+  src: url(../font/ios7.ttf);
 }
 
-body{
-  background-image: url(../img/home/360wallpaper.jpg);
-  /* background-size: cover; */
+@font-face {
+  font-family: "font1";
+  src: url(../font/font1.ttf);
+}
+
+:root {
+  --color: #008c8c;
+}
+
+body {
+  min-width: 1400px;
+  height: 100vh;
+  background-image: url(../img/bg/bgEvenfall.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 }
