@@ -1,23 +1,22 @@
 <template>
   <div id="blog">
-    <nav-bar></nav-bar>
+    <router-view />
+     <main-nav-bar></main-nav-bar>
   </div>
 </template>
 
 <script>
-import NavBar from "./components/content/navbar/NavBar"
+import MainNavBar from "components/content/mainnavbar/MainNavBar";
 
 export default {
-  name: 'Blog',
+  name: "Blog",
   components: {
-    NavBar
-  }
-}
+    MainNavBar,
+  },
+};
 </script>
 
 <style>
 /* 样式初始化 */
 @import "./assets/css/base.css";
-
-
 </style>

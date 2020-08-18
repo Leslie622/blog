@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Blog from './Blog.vue'
+import router from "./router/index"
 
 // 引入并使用elementUI
 import ElementUI from "element-ui"
@@ -12,4 +13,5 @@ import 'animate.css';
 Vue.config.productionTip = false
 new Vue({
   render: h => h(Blog),
+  router
 }).$mount('#blog')

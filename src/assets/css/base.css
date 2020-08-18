@@ -4,16 +4,12 @@
   src: url(../font/ios7.ttf);
 }
 
-@font-face {
-  font-family: "font1";
-  src: url(../font/font1.ttf);
-}
-
 :root {
   --color: #008c8c;
 }
 
 body {
+  overflow: hidden;
   min-width: 1400px;
   height: 100vh;
   background-image: url(../img/bg/bgEvenfall.jpg);
@@ -21,3 +17,5 @@ body {
   background-repeat: no-repeat;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 }
+
+
