@@ -70,7 +70,6 @@ export default {
   top: 0;
   position: fixed;
 }
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -79,12 +78,14 @@ export default {
   height: 100px;
   font-family: ios7;
 }
-
 .siteLogoContainer {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
-
+.siteLogoContainer:hover {
+  animation: heartbeat 0.8s infinite;
+}
 .navCategory {
   display: flex;
   align-items: center;
@@ -93,28 +94,42 @@ export default {
   font-size: 25px;
 }
 .avatar img {
-  vertical-align: top;
+  margin-right: 20px;
+  width: 50px;
   font-size: 0;
   border-radius: 3px;
-  width: 50px;
-  margin-right: 20px;
+  vertical-align: top;
+  transition: all 0.3s;
 }
-
 .siteLogo {
   font-size: 55px;
   color: white;
+  text-shadow: var(--logTextShadow);
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.95, 0.95);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.05, 1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.95, 0.95);
+    opacity: 1;
+  }
 }
 
+/* ele导航样式 */
 .el-menu {
   background-color: transparent;
   border-bottom: none;
 }
-
 .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus,
 .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover {
   background-color: transparent;
 }
-
 .el-menu.el-menu--horizontal,
 .el-menu--horizontal > .el-menu-item {
   margin: 0 10px;
@@ -124,7 +139,6 @@ export default {
 </style>
 
 <style>
-/* ele导航样式 */
 .el-submenu__title {
   margin-left: 10px;
 }
@@ -150,15 +164,20 @@ export default {
 
 /* ele下拉菜单样式 */
 .dropDown.el-dropdown {
-  padding: 20px;
   color: #fff;
   cursor: pointer;
+}
+.dropDown .el-dropdown-link.el-dropdown-selfdefine {
+  padding: 20px;
 }
 .dropdownMenu.el-dropdown-menu {
   min-width: 70px;
   border: none;
   color: #fff;
   background-color: transparent;
+}
+.dropdownMenu.el-popper[x-placement^="bottom"] {
+  margin: 0;
 }
 .dropdownMenu .el-dropdown-menu__item {
   color: #fff;

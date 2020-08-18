@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color: #008c8c;
+  --logTextShadow: 0 0 1px #D4AF37, 0 0 5px #D4AF37, 0 0 10px #D4AF37, 0 0 415px #D4AF37, 0 0 20px #D4AF37;
 }
 
 body {
@@ -17,5 +17,3 @@ body {
   background-repeat: no-repeat;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 }
-
-
