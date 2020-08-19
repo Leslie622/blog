@@ -1,0 +1,8 @@
+:root {
+  /* logo文本阴影-金色*/
+  --logTextShadow: 0 0 1px #d4af37, 0 0 5px #D4AF37, 0 0 10px #D4AF37, 0 0 415px  #D4AF37, 0 0 20px  #D4AF37;
+}
+
+body{
+  background-image: url(./bgEvenfall.jpg);
+}
