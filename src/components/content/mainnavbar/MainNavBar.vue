@@ -28,11 +28,10 @@
         <div class="navCategory">
           <el-menu
             mode="horizontal"
-            text-color="#ffffff"
-            active-text-color="#D4AF37"
             menu-trigger="click"
             router
             :default-active="$route.path"
+            class="navMenu"
           >
             <el-menu-item index="/home">首页</el-menu-item>
             <el-menu-item index="/mainblog">博客</el-menu-item>
@@ -64,6 +63,9 @@ export default {
 
 
 <style  scoped>
+/* ele导航样式表（导航+下拉菜单） */
+@import "../../../assets/css/elestyle/mainNavbar.css";
+/* 组件样式 */
 #navbar {
   right: 0;
   left: 0;
@@ -108,7 +110,7 @@ export default {
 }
 @keyframes heartbeat {
   0% {
-    transform: scale(0.95, 0.95);
+    transform: scale(1, 1);
     opacity: 1;
   }
   25% {
@@ -116,80 +118,8 @@ export default {
     opacity: 0.8;
   }
   100% {
-    transform: scale(0.95, 0.95);
+    transform: scale(1, 1);
     opacity: 1;
   }
-}
-
-/* ele导航样式 */
-.el-menu {
-  background-color: transparent;
-  border-bottom: none;
-}
-.el-menu--horizontal > .el-menu-item:not(.is-disabled):focus,
-.el-menu--horizontal > .el-menu-item:not(.is-disabled):hover {
-  background-color: transparent;
-}
-.el-menu.el-menu--horizontal,
-.el-menu--horizontal > .el-menu-item {
-  margin: 0 10px;
-  font-size: 15px;
-  border-bottom: none;
-}
-</style>
-
-<style>
-.el-submenu__title {
-  margin-left: 10px;
-}
-.container .el-menu--horizontal > .el-submenu .el-submenu__title:hover {
-  background-color: transparent;
-}
-.popup {
-  margin-right: 95px;
-  background-color: transparent;
-}
-.el-menu.el-menu--popup.el-menu--popup-bottom-start {
-  min-width: 120px;
-  background-color: transparent;
-}
-.el-menu.el-menu--popup.el-menu--popup-bottom-start .el-menu-item {
-  width: 120px;
-  text-align: center;
-  color: #000000;
-  background-color: transparent;
-}
-
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-/* ele下拉菜单样式 */
-.dropDown.el-dropdown {
-  color: #fff;
-  cursor: pointer;
-}
-.dropDown .el-dropdown-link.el-dropdown-selfdefine {
-  padding: 20px;
-}
-.dropdownMenu.el-dropdown-menu {
-  min-width: 70px;
-  border: none;
-  color: #fff;
-  background-color: transparent;
-}
-.dropdownMenu.el-popper[x-placement^="bottom"] {
-  margin: 0;
-}
-.dropdownMenu .el-dropdown-menu__item {
-  color: #fff;
-  text-align: center;
-}
-.dropdownMenu.el-popper .popper__arrow,
-.el-popper .popper__arrow::after {
-  display: none;
-}
-.dropdownMenu .el-dropdown-menu__item:focus,
-.dropdownMenu .el-dropdown-menu__item:not(.is-disabled):hover {
-  color: #d4af37;
-  background-color: transparent;
 }
 </style>

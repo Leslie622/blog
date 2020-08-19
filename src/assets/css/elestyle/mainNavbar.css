@@ -1,0 +1,62 @@
+/* ele导航样式 */
+
+.navMenu.el-menu.el-menu--horizontal {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.navMenu.el-menu.el-menu--horizontal .el-menu-item.is-active {
+  color: white;
+  border-bottom: 2px solid #d4af37;
+}
+
+.navMenu.el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .navMenu.el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+  color: white;
+  background-color: transparent;
+}
+
+.navMenu.el-menu.el-menu--horizontal, .navMenu.el-menu--horizontal>.el-menu-item {
+  color: white;
+  margin: 0 10px;
+  font-size: 15px;
+  border-bottom: none;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* ele下拉菜单样式 */
+
+.dropDown.el-dropdown {
+  color: #fff;
+  cursor: pointer;
+}
+
+.dropDown .el-dropdown-link.el-dropdown-selfdefine {
+  padding: 20px;
+}
+
+.dropdownMenu.el-dropdown-menu {
+  padding: 0;
+  min-width: 70px;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+}
+
+.dropdownMenu.el-popper[x-placement^="bottom"] {
+  margin: 0;
+}
+
+.dropdownMenu .el-dropdown-menu__item {
+  color: #fff;
+  text-align: center;
+}
+
+.dropdownMenu.el-popper .popper__arrow, .el-popper .popper__arrow::after {
+  display: none;
+}
+
+.dropdownMenu .el-dropdown-menu__item:focus, .dropdownMenu .el-dropdown-menu__item:not(.is-disabled):hover {
+  color: #d4af37;
+  background-color: transparent;
+}
