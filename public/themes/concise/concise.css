@@ -1,37 +1,37 @@
 :root {
   /*=======================导航======================= */
   /* logo - 文本颜色 */
-  --logoTextColor: white;
+  --logoTextColor: #909399;
   /* logo - 文本阴影 */
-  --logTextShadow: 0 0 1px #d4af37, 0 0 5px #D4AF37, 0 0 10px #D4AF37, 0 0 415px #D4AF37, 0 0 20px #D4AF37;
+  --logTextShadow: 0 0 1px #909399, 0 0 5px #909399;
   /* 导航 - 背景颜色 */
   --navBg: transparent;
   /* 右侧分类 - 背景颜色 */
   --navCategoryBg: transparent;
   /* 右侧分类item - 文本颜色 */
-  --itemTextColor: white;
-  /* 右侧分类item active - 文本颜色 */
-  --itemActive: #d4af37;
-  /* 右侧分类item active - border颜色 */
-  --itemBorderActive: #d4af37;
+  --itemTextColor: #909399;
   /* 右侧分类item hover - 文本颜色 */
-  --itemHover: white;
+  --itemHover: #909399;
+  /* 右侧分类item active - 文本颜色 */
+  --itemActive: #909399;
+    /* 右侧分类item active - border颜色 */
+    --itemBorderActive: #909399;
   /* 右侧分类item hover - 背景颜色 */
   --itemBgHover: transparent;
   /* 右侧主题-文字颜色 */
-  --themeTextColor: white;
+  --themeTextColor: #909399;
   /* 右侧主题下拉菜单 - 背景颜色 */
-  --themeDropdownBg: transparent;
+  --themeDropdownBg: white;
   /* 右侧主题下拉菜单 - 文字颜色 */
   --themeDropdownTextColor: white;
   /* 右侧主题下拉菜单item - 文字颜色 */
-  --themeItemTextColor: white;
+  --themeItemTextColor: #909399;
   /* 右侧主题下拉菜单item hover - 文字颜色 */
-  --themeItemHoverTextColor: #d4af37;
+  --themeItemHoverTextColor: white;
   /* 右侧主题下拉菜单item hover - 背景颜色 */
-  --themeItemHoverBg: transparent;
+  --themeItemHoverBg: #909399;
 }
 
 body {
-  background-image: url(./bgEvenfall.jpg);
+  background-image: url(./bgWhite.jpg);
 }

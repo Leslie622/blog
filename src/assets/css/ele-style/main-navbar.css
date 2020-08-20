@@ -1,23 +1,23 @@
 /* ele导航样式 */
 
 .navMenu.el-menu.el-menu--horizontal {
-  background-color: transparent;
+  background-color: var(--navCategoryBg);
   border-bottom: none;
 }
 
-.navMenu.el-menu.el-menu--horizontal .el-menu-item.is-active {
-  color: white;
-  border-bottom: 2px solid #d4af37;
+.navCategory .navMenu.el-menu.el-menu--horizontal>.el-menu-item.is-active {
+  color: var(--itemActive);
+  border-bottom: 2px solid var(--itemBorderActive);
 }
 
 .navMenu.el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .navMenu.el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
-  color: white;
-  background-color: transparent;
+  color: var(--itemHover);
+  background-color: var(--itemBgHover);
 }
 
 .navMenu.el-menu.el-menu--horizontal, .navMenu.el-menu--horizontal>.el-menu-item {
-  color: white;
-  margin: 0 10px;
+  color: var(--itemTextColor);
+  margin: 0 25px;
   font-size: 15px;
   border-bottom: none;
 }
@@ -25,7 +25,8 @@
 /* ele下拉菜单样式 */
 
 .dropDown.el-dropdown {
-  color: #fff;
+  font-size: 15px;
+  color: var(--themeTextColor);
   cursor: pointer;
 }
 
@@ -34,11 +35,12 @@
 }
 
 .dropdownMenu.el-dropdown-menu {
+  overflow: hidden;
   padding: 0;
   min-width: 70px;
   border: none;
-  color: #fff;
-  background-color: transparent;
+  color: var(--themeDropdownTextColor);
+  background-color: var(--themeDropdownBg);
 }
 
 .dropdownMenu.el-popper[x-placement^="bottom"] {
@@ -46,7 +48,7 @@
 }
 
 .dropdownMenu .el-dropdown-menu__item {
-  color: #fff;
+  color: var(--themeItemTextColor);
   text-align: center;
 }
 
@@ -55,6 +57,6 @@
 }
 
 .dropdownMenu .el-dropdown-menu__item:focus, .dropdownMenu .el-dropdown-menu__item:not(.is-disabled):hover {
-  color: #d4af37;
-  background-color: transparent;
+  color: var(--themeItemHoverTextColor);
+  background-color: var(--themeItemHoverBg);
 }

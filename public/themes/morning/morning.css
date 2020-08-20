@@ -1,3 +1,37 @@
+:root {
+  /*=======================导航======================= */
+  /* logo - 文本颜色 */
+  --logoTextColor: #000;
+  /* logo - 文本阴影 */
+  --logTextShadow: 0 0 1px #000, 0 0 5px #000;
+  /* 导航 - 背景颜色 */
+  --navBg: transparent;
+  /* 右侧分类 - 背景颜色 */
+  --navCategoryBg: transparent;
+  /* 右侧分类item - 文本颜色 */
+  --itemTextColor:rgba(0, 0, 0, 0.5);
+  /* 右侧分类item hover - 文本颜色 */
+  --itemHover: #909399;
+  /* 右侧分类item active - 文本颜色 */
+  --itemActive: #000;
+  /* 右侧分类item active - border颜色 */
+  --itemBorderActive: #000;
+  /* 右侧分类item hover - 背景颜色 */
+  --itemBgHover: transparent;
+  /* 右侧主题-文字颜色 */
+  --themeTextColor: rgba(0, 0, 0, 0.5);
+  /* 右侧主题下拉菜单 - 背景颜色 */
+  --themeDropdownBg: transparent;
+  /* 右侧主题下拉菜单 - 文字颜色 */
+  --themeDropdownTextColor: white;
+  /* 右侧主题下拉菜单item - 文字颜色 */
+  --themeItemTextColor: rgba(0, 0, 0, 0.5);
+  /* 右侧主题下拉菜单item hover - 文字颜色 */
+  --themeItemHoverTextColor: white;
+  /* 右侧主题下拉菜单item hover - 背景颜色 */
+  --themeItemHoverBg: transparent;
+}
+
 body {
   background-image: url(./bgMorning.jpg);
 }

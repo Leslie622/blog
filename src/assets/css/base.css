@@ -11,5 +11,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  transition: background-image .4s;
+  transition: all .6s;
+}
+
+.Particles {
+  width: 100%;
+  position: fixed;
+  top: 80px;
 }

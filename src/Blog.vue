@@ -1,17 +1,23 @@
 <template>
   <div id="blog">
     <router-view />
-     <main-nav-bar></main-nav-bar>
+    <vue-particles></vue-particles>
+    <main-nav-bar></main-nav-bar>
   </div>
 </template>
 
 <script>
 import MainNavBar from "components/content/mainnavbar/MainNavBar";
+import VueParticles from "./components/common/vue-particles/VueParticles";
 
 export default {
   name: "Blog",
+  data() {
+    return {};
+  },
   components: {
     MainNavBar,
+    VueParticles,
   },
 };
 </script>

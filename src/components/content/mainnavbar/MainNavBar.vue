@@ -24,7 +24,7 @@
         enter-active-class="animate__animated animate__lightSpeedInRight"
       >
         <div class="navCategory">
-          <el-menu                          
+          <el-menu
             mode="horizontal"
             menu-trigger="click"
             router
@@ -36,15 +36,16 @@
             <el-menu-item index="/diary">日记</el-menu-item>
             <el-menu-item index="/mark">留言</el-menu-item>
           </el-menu>
-          <el-dropdown trigger="click" class="dropDown"  @command="changeThemes">
+          <el-dropdown trigger="click" class="dropDown" @command="changeThemes">
             <div class="el-dropdown-link">
               主题
               <i class="el-icon-arrow-down el-icon--right"></i>
             </div>
             <el-dropdown-menu slot="dropdown" class="dropdownMenu">
-              <el-dropdown-item command="morning">Morning</el-dropdown-item>
-              <el-dropdown-item command="evenfall">evenfall</el-dropdown-item>
-              <el-dropdown-item command="night">Night</el-dropdown-item>
+              <el-dropdown-item :command="evenfallConfig">evenfall</el-dropdown-item>
+              <el-dropdown-item :command="conciseConfig">简约</el-dropdown-item>
+              <el-dropdown-item :command="morningConfig">Morning</el-dropdown-item>
+              <el-dropdown-item :command="nightConfig">Night</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -55,11 +56,28 @@
  
 <script>
 import toggleTheme from "common/themes";
+import {
+  evenfallConfig,
+  conciseConfig,
+  morningConfig,
+  nightConfig,
+} from "common/pariticles";
 export default {
   name: "NavBar",
+  data() {
+    return {
+      evenfallConfig,
+      conciseConfig,
+      morningConfig,
+      nightConfig,
+    };
+  },
   methods: {
-    changeThemes(command) {
-      toggleTheme(command);
+    changeThemes(themesConfig) {
+      toggleTheme(themesConfig.themes);
+      setTimeout(() => {
+        this.$bus.$emit("toggleParticles", themesConfig);
+      },0);
     },
   },
 };
@@ -83,8 +101,11 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0 100px;
-  height: 100px;
+  min-width: 1400px;
+  height: 80px;
   font-family: ios7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+  background-color: var(--navBg);
 }
 .siteLogoContainer {
   display: flex;
@@ -96,7 +117,7 @@ export default {
 }
 .siteLogo {
   font-size: 55px;
-  color: white;
+  color: var(--logoTextColor);
   text-shadow: var(--logTextShadow);
 }
 .logoSup {
