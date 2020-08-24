@@ -1,12 +1,12 @@
 <template>
-  <div id="blog">
+  <div id="admin">
     <h1>管理员界面</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Blog",
+  name: "admin",
   data() {
     return {};
   },
@@ -14,8 +14,6 @@ export default {
 </script>
 
 <style>
-body {
-  background-image: none;
-  background-color: white;
-}
+/* 样式初始化 */
+@import "../../assets/css/base.css";
 </style>

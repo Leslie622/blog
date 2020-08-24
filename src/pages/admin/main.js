@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Blog from './Blog.vue'
+import admin from './admin.vue'
 import router from "../../router/index"
 
 // 引入并使用elementUI
@@ -21,7 +21,7 @@ Vue.config.productionTip = false
 Vue.prototype.$bus = new Vue()
 
 new Vue({
-  render: h => h(Blog),
+  render: h => h(admin),
   router
-}).$mount('#blog')
+}).$mount('#admin')
 
