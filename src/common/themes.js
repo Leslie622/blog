@@ -13,6 +13,7 @@ const createLink = (() => {
   }
 })()
 
+//切换theme函数
 const toggleTheme = (theme = 'default') => {
   const $link = createLink()
   $link.href = `./themes/${theme}/${theme}.css`

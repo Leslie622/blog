@@ -1,8 +1,8 @@
 <template>
   <div id="blog">
     <router-view />
-    <vue-particles></vue-particles>
-    <main-nav-bar v-if="isAdmin"></main-nav-bar>
+    <vue-particles />
+    <main-nav-bar />
   </div>
 </template>
 
@@ -13,9 +13,7 @@ import VueParticles from "../../components/common/vue-particles/VueParticles";
 export default {
   name: "Blog",
   data() {
-    return {
-      isAdmin:true
-    };
+    return {};
   },
   components: {
     MainNavBar,
