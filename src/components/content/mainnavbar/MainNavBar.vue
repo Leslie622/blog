@@ -6,17 +6,19 @@
         name="logoTransition"
         enter-active-class="animate__animated animate__lightSpeedInLeft"
       >
-        <div class="siteLogoContainer">
-          <div class="avatar">
-            <img src="~assets/img/myAvatar/myAvatar.jpg" alt="网络头像" />
+        <a href="/admin.html">
+          <div class="siteLogoContainer">
+            <div class="avatar">
+              <img src="~assets/img/myAvatar/myAvatar.jpg" alt="网络头像" />
+            </div>
+            <div class="siteLogo">
+              <i>
+                Leslie
+                <sup class="logoSup">blog</sup>
+              </i>
+            </div>
           </div>
-          <div class="siteLogo">
-            <i>
-              Leslie
-              <sup class="logoSup">blog</sup>
-            </i>
-          </div>
-        </div>
+        </a>
       </transition>
       <transition
         appear
@@ -36,16 +38,17 @@
             <el-menu-item index="/diary">日记</el-menu-item>
             <el-menu-item index="/mark">留言</el-menu-item>
           </el-menu>
-          <el-dropdown trigger="click" class="dropDown" @command="changeThemes">
+          <el-dropdown trigger="click" class="dropDown" @command="changeThemes" placement="bottom">
             <div class="el-dropdown-link">
               主题
               <i class="el-icon-arrow-down el-icon--right"></i>
             </div>
             <el-dropdown-menu slot="dropdown" class="dropdownMenu">
-              <el-dropdown-item :command="evenfallConfig">evenfall</el-dropdown-item>
-              <el-dropdown-item :command="conciseConfig">简约</el-dropdown-item>
-              <el-dropdown-item :command="morningConfig">Morning</el-dropdown-item>
-              <el-dropdown-item :command="nightConfig">Night</el-dropdown-item>
+              <el-dropdown-item
+                v-for="(item,key) in themeConfig"
+                :command="item.config"
+                :key="key"
+              >{{item.theme}}</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -61,23 +64,44 @@ import {
   conciseConfig,
   morningConfig,
   nightConfig,
+  closePariticles,
 } from "common/pariticles";
+
 export default {
   name: "NavBar",
   data() {
     return {
-      evenfallConfig,
-      conciseConfig,
-      morningConfig,
-      nightConfig,
+      themeConfig: [
+        {
+          theme: "Evenfall",
+          config: evenfallConfig,
+        },
+        {
+          theme: "简约",
+          config: conciseConfig,
+        },
+        {
+          theme: "Morning",
+          config: morningConfig,
+        },
+        {
+          theme: "Night",
+          config: nightConfig,
+        },
+        {
+          theme: "关闭粒子特效",
+          config: closePariticles,
+        },
+      ],
     };
   },
   methods: {
+    //切换主题
     changeThemes(themesConfig) {
-      toggleTheme(themesConfig.themes);
-      setTimeout(() => {
-        this.$bus.$emit("toggleParticles", themesConfig);
-      },0);
+      if (themesConfig.themes) {
+        toggleTheme(themesConfig.themes);
+      }
+      this.$bus.$emit("toggleParticles", themesConfig);
     },
   },
 };
@@ -85,10 +109,10 @@ export default {
 
 
 <style  scoped>
-/* ele导航样式表（导航+下拉菜单） */
+/* --------ele导航样式表（导航+下拉菜单)-------- */
 @import "~assets/css/ele-style/main-navbar.css";
 
-/* 组件样式 */
+/* --------组件样式-------- */
 /* ----左侧logo---- */
 #navbar {
   right: 0;
@@ -112,9 +136,6 @@ export default {
   align-items: center;
   cursor: pointer;
 }
-.siteLogoContainer:hover {
-  animation: heartbeat 0.8s 0.5s infinite;
-}
 .siteLogo {
   font-size: 55px;
   color: var(--logoTextColor);
@@ -127,20 +148,6 @@ export default {
   margin-right: 20px;
   width: 50px;
   border-radius: 3px;
-}
-@keyframes heartbeat {
-  0% {
-    transform: scale(1, 1);
-    opacity: 1;
-  }
-  25% {
-    transform: scale(1.05, 1.05);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1, 1);
-    opacity: 1;
-  }
 }
 /* ----右侧导航分类---- */
 .navCategory {

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Blog from './Blog.vue'
-import router from "./router/index"
+import router from "../../router/index"
 
 // 引入并使用elementUI
 import ElementUI from "element-ui"
@@ -19,7 +19,6 @@ Vue.config.productionTip = false
 
 // 事件总线
 Vue.prototype.$bus = new Vue()
-
 
 new Vue({
   render: h => h(Blog),

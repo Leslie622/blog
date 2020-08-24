@@ -1,5 +1,5 @@
 const evenfallConfig = {
-  themes: "evenfall",
+  themes: "default",
   isParticles: true,
 }
 const conciseConfig = {
@@ -14,5 +14,8 @@ const nightConfig = {
   themes: "night",
   isParticles: true,
 }
+const closePariticles = {
+  isParticles: false,
+}
 
-export { evenfallConfig, conciseConfig, morningConfig, nightConfig };
+export { evenfallConfig, conciseConfig, morningConfig, nightConfig, closePariticles };

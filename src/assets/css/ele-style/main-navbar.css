@@ -17,7 +17,7 @@
 
 .navMenu.el-menu.el-menu--horizontal, .navMenu.el-menu--horizontal>.el-menu-item {
   color: var(--itemTextColor);
-  margin: 0 25px;
+  margin: 0 30px;
   font-size: 15px;
   border-bottom: none;
 }
@@ -31,13 +31,13 @@
 }
 
 .dropDown .el-dropdown-link.el-dropdown-selfdefine {
-  padding: 20px;
+  padding: 20px 20px;
 }
 
 .dropdownMenu.el-dropdown-menu {
   overflow: hidden;
   padding: 0;
-  min-width: 70px;
+  min-width: 120px;
   border: none;
   color: var(--themeDropdownTextColor);
   background-color: var(--themeDropdownBg);

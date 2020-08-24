@@ -10,12 +10,18 @@ body {
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
+  user-select:none;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  transition: all .6s;
+  transition: all .5s;
 }
 
+
 .Particles {
-  width: 100%;
   position: fixed;
   top: 80px;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
 }

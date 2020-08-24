@@ -7,6 +7,7 @@
       :shapeType="particlesConfig.shapeType"
       :linesColor="particlesConfig.linesColor"
       :lineLinked="particlesConfig.lineLinked"
+      :clickMode="particlesConfig.clickMode"
       class="Particles"
     ></vue-particles>
   </div>
@@ -17,15 +18,15 @@ export default {
   name: "vueparticles",
   data() {
     return {
-      key: 0,
       //背景粒子配置
       isParticles: true,
       particlesConfig: {
         color: "#d4af37",
-        number: 40,
+        number: 30,
         shapeType: "star",
         linesColor: "#d4af37",
-        lineLinked: false,
+        lineLinked: true,
+        clickMode: "repulse",
       },
     };
   },
