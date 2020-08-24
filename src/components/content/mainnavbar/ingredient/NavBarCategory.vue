@@ -52,19 +52,19 @@ export default {
     return {
       themeConfig: [
         {
-          theme: "Evenfall",
+          theme: "' 一抹黄 '",
           config: evenfallConfig,
         },
         {
-          theme: "简约",
+          theme: "灰白黑",
           config: conciseConfig,
         },
         {
-          theme: "Morning",
+          theme: "万缕朝阳",
           config: morningConfig,
         },
         {
-          theme: "Night",
+          theme: "皓月",
           config: nightConfig,
         },
         {

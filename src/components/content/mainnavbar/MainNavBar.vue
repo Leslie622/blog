@@ -1,8 +1,7 @@
 <template>
   <div id="navbar">
     <div class="container">
-
-        <site-logo />
+      <site-logo />
       <nav-bar-category />
     </div>
   </div>

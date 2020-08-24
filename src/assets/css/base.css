@@ -3,6 +3,10 @@
   font-family: "ios7";
   src: url(../font/ios7.ttf);
 }
+@font-face {
+  font-family: "幼圆";
+  src: url(../font/youyuan.TTF);
+}
 
 body {
   overflow: hidden;
