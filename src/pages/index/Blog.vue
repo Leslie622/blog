@@ -2,25 +2,32 @@
   <div id="blog">
     <router-view />
     <vue-particles />
-    <main-nav-bar />
-    <check-user></check-user>
+    <main-nav-bar @switchCheckUserPG="switchCheckUserPG" />
+    <check-user v-if="isCheckUserPG" @switchCheckUserPG="switchCheckUserPG"></check-user>
   </div>
 </template>
 
 <script>
 import MainNavBar from "components/content/mainnavbar/MainNavBar";
 import VueParticles from "components/common/vue-particles/VueParticles";
-import CheckUser from "components/content/check-user/CheckUser"
+import CheckUser from "components/content/check-user/CheckUser";
 
 export default {
   name: "Blog",
   data() {
-    return {};
+    return {
+      isCheckUserPG: false,
+    };
+  },
+  methods: {
+    switchCheckUserPG(isCheckUserPG) {
+      this.isCheckUserPG = isCheckUserPG;
+    },
   },
   components: {
     MainNavBar,
     VueParticles,
-    CheckUser
+    CheckUser,
   },
 };
 </script>

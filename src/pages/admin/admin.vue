@@ -15,5 +15,5 @@ export default {
 
 <style>
 /* 样式初始化 */
-@import "../../assets/css/base.css";
+@import "../../assets/css/admin-base.css";
 </style>

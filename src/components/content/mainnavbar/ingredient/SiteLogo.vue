@@ -6,19 +6,17 @@
       enter-active-class="animate__animated animate__lightSpeedInLeft"
     >
       <div>
-        <a href="/admin.html">
-          <div class="siteLogoContainer">
-            <div class="avatar">
-              <img src="~assets/img/myAvatar/myAvatar.jpg" alt="网络头像" />
-            </div>
-            <div class="siteLogo">
-              <i>
-                Leslie
-                <sup class="logoSup">blog</sup>
-              </i>
-            </div>
+        <div class="siteLogoContainer">
+          <div class="avatar">
+            <img src="~assets/img/myAvatar/myAvatar.jpg" alt="网络头像" />
           </div>
-        </a>
+          <div class="siteLogo">
+            <i>
+              Leslie
+              <sup class="logoSup">blog</sup>
+            </i>
+          </div>
+        </div>
       </div>
     </transition>
   </div>

@@ -56,11 +56,11 @@ export default {
           config: evenfallConfig,
         },
         {
-          theme: "灰白黑",
+          theme: "灰白",
           config: conciseConfig,
         },
         {
-          theme: "万缕朝阳",
+          theme: "朝阳",
           config: morningConfig,
         },
         {
