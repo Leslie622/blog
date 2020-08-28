@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import admin from './admin.vue'
-import router from "../../router/index"
+import router from "../../router/admin"
 
 // 引入并使用elementUI
 import ElementUI from "element-ui"

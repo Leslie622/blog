@@ -1,14 +1,20 @@
 <template>
   <div id="admin">
-    <h1>管理员界面</h1>
+    <router-view />
+    <admin-nav-bar path="/writeblog"/>
   </div>
 </template>
 
 <script>
+import AdminNavBar from "components/admin/admin-navbar/AdminNavBar";
+
 export default {
   name: "admin",
   data() {
     return {};
+  },
+  components: {
+    AdminNavBar,
   },
 };
 </script>

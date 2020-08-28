@@ -35,7 +35,6 @@ const routes = [
 const router = new VueRouter({
   routes,
   mode: 'history',
-  linkActiveClass: "on"
 })
 
 export default router

@@ -12,7 +12,9 @@
                 <input type="text" class="verifyInput" />
                 <div class="verifyText">请输入密码</div>
               </div>
-              <div class="enter checkUserButton">Enter</div>
+              <a href="/admin.html/writeblog">
+                <div class="enter checkUserButton">Enter</div>
+              </a>
             </div>
           </div>
           <div class="hint">
