@@ -1,13 +1,7 @@
 <template>
-  <div>
-    <div class="switchMenu" @click="switchMenu">
-      <i class="el-icon-menu"></i>
-    </div>
-    <transition
-      enter-active-class="animate__animated animate__backInRight"
-      leave-active-class="animate__animated animate__backOutRight"
-    >
-      <div class="MenuContainer" v-if="isOpenMenu">
+  <transition appear enter-active-class="animate__animated animate__zoomInDown">
+    <div class="adminNavbar">
+      <div class="MenuContainer">
         <router-link v-for="(item,index) in navbarTab" :to="item.path" :key="index">
           <div
             class="MenuItem"
@@ -16,8 +10,8 @@
           >{{item.title}}</div>
         </router-link>
       </div>
-    </transition>
-  </div>
+    </div>
+  </transition>
 </template>
  
 <script>
@@ -30,67 +24,51 @@ export default {
         { title: "写博客", path: "/admin.html/writeblog" },
         { title: "写日记", path: "/admin.html/writediary" },
       ],
-      isOpenMenu: true,
     };
-  },
-  methods: {
-    switchMenu() {
-      this.isOpenMenu = !this.isOpenMenu;
-    },
   },
 };
 </script>
 
 <style scoped>
-.switchMenu {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 40px;
-  right: 75px;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  font-size: 25px;
-  box-shadow: 0 0 4px #909399;
-  color: #909399;
-  cursor: pointer;
+.adminNavbar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  left: 10px;
+  min-width: 1800px;
+  height: 65px;
+  padding: 0 100px;
+  border-radius: 20px;
+  font-family: ios7;
+  font-size: 14px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .2);
+  background-color: rgba(255, 255, 255, .4);
 }
-.switchMenu:active {
-  box-shadow: none;
-}
+
 .MenuContainer {
-  position: absolute;
   display: flex;
-  flex-direction: column;
-  top: 120px;
-  right: 0;
-  bottom: 0;
-  width: 200px;
-  background-color: transparent;
 }
+
+.MenuContainer a {
+  margin: 0 30px;
+}
+
 .MenuItem {
-  width: 100%;
-  height: 80px;
-  margin: 20px 0;
+  width: 60px;
+  height: 60px;
   text-align: center;
-  line-height: 80px;
+  line-height: 55px;
   cursor: pointer;
-  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
-  transition: background .5s;
+  clip-path: polygon(0% 0%, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  transition: all .3s;
 }
+
 .MenuItem:not(.active):hover {
-  background-color: #fffafa94;
-  transition: none;
+  background-color: #fffafa;
 }
+
 .active {
   background: url("../../../assets/img/bg/adminTabActiveBg.png") 100% 100%
   repeat;
 }
-
-
-
-
-
 </style>

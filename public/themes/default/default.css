@@ -5,7 +5,7 @@
   /* logo - 文本阴影 */
   --logTextShadow: 0 0 1px #d4af37, 0 0 5px #D4AF37, 0 0 10px #D4AF37, 0 0 415px #D4AF37, 0 0 20px #D4AF37;
   /* 导航 - 背景颜色 */
-  --navBg: transparent;
+  --navBg: rgba(131, 118, 118, 0.1);
   /* 右侧分类 - 背景颜色 */
   --navCategoryBg: transparent;
   /* 右侧分类item - 文本颜色 */

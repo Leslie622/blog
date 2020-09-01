@@ -1,7 +1,7 @@
 <template>
   <div id="admin">
     <router-view />
-    <admin-nav-bar path="/writeblog"/>
+    <admin-nav-bar />
   </div>
 </template>
 
@@ -22,4 +22,5 @@ export default {
 <style>
 /* 样式初始化 */
 @import "../../assets/css/admin-base.css";
+
 </style>

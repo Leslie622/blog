@@ -10,7 +10,6 @@
 }
 
 body {
-  min-width: 1400px;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   background: #e4e8e9 url(../img/bg/adminBg.jpg) repeat left top;
   overflow: hidden;

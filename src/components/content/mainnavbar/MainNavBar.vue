@@ -1,10 +1,12 @@
 <template>
-  <div id="navbar">
-    <div class="container">
-      <site-logo @click.native="controlCheckUserPG" />
-      <nav-bar-category />
+  <transition appear enter-active-class="animate__animated animate__zoomIn">
+    <div id="navbar">
+      <div class="container">
+        <site-logo @click.native="controlCheckUserPG" />
+        <nav-bar-category />
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
  
 <script>
@@ -14,8 +16,7 @@ import NavBarCategory from "./ingredient/NavBarCategory";
 export default {
   name: "NavBar",
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     controlCheckUserPG() {
@@ -36,10 +37,11 @@ export default {
 
 #navbar {
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  top: 10px;
+  right: 10px;
+  left: 10px;
 }
+
 .container {
   display: flex;
   align-items: center;
@@ -47,6 +49,7 @@ export default {
   min-width: 1400px;
   height: 80px;
   padding: 0 100px;
+  border-radius: 15px;
   font-family: ios7;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
   background-color: var(--navBg);

@@ -1,7 +1,7 @@
 <template>
   <div id="blog">
     <router-view />
-    <vue-particles />
+    <!-- <vue-particles /> -->
     <main-nav-bar @switchCheckUserPG="switchCheckUserPG" />
     <check-user v-if="isCheckUserPG" @switchCheckUserPG="switchCheckUserPG"></check-user>
   </div>

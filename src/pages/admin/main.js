@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import admin from './admin.vue'
+import Admin from './admin.vue'
 import router from "../../router/admin"
 
-// 引入并使用elementUI
+// 引入elementUI
 import ElementUI from "element-ui"
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
@@ -14,6 +14,11 @@ import 'animate.css';
 import VueParticles from 'vue-particles'
 Vue.use(VueParticles)
 
+//引入markdowm编辑器
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+Vue.use(mavonEditor)
+
 // 全局配置
 Vue.config.productionTip = false
 
@@ -21,7 +26,7 @@ Vue.config.productionTip = false
 Vue.prototype.$bus = new Vue()
 
 new Vue({
-  render: h => h(admin),
-  router
+  render: h => h(Admin),
+  router,
 }).$mount('#admin')
 
