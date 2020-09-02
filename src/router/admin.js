@@ -15,10 +15,12 @@ const routes = [
   },
   {
     path: '/admin.html/writeblog',
+    name: "WriteBlog",
     component: WriteBlog
   },
   {
     path: '/admin.html/writediary',
+    name: "WriteDiary",
     component: WriteDiary
   },
 ]

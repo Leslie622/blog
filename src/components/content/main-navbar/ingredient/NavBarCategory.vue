@@ -35,7 +35,6 @@ import toggleTheme from "common/themes";
 import {
   evenfallConfig,
   conciseConfig,
-  morningConfig,
   nightConfig,
   closePariticles,
 } from "common/pariticles";
@@ -52,10 +51,6 @@ export default {
         {
           theme: "灰白",
           config: conciseConfig,
-        },
-        {
-          theme: "朝阳",
-          config: morningConfig,
         },
         {
           theme: "皓月",

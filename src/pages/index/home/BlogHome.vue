@@ -5,6 +5,7 @@
 <script>
 export default {
   name: "BlogHome",
+  methods: {},
 };
 </script>
 
@@ -12,4 +13,5 @@ export default {
 h2 {
   color: white;
 }
+
 </style>

@@ -2,7 +2,7 @@
   <div class="writeBlog">
     <transition appear enter-active-class="animate__animated animate__zoomInDown">
       <mavon-editor
-        v-model="blogContent"
+        v-model="blogData.blogContent"
         class="mavonEditor"
         previewBackground="ffffff"
         codeStyle="tomorrow"
@@ -15,13 +15,13 @@
           <div class="issue btn" @click="issue">发布博客</div>
         </div>
         <div class="blogTitleContent">
-          <input type="text" class="blogTitleInput" v-model="blogTitle" />
+          <input type="text" class="blogTitleInput" v-model="blogData.blogTitle" />
           <div class="hintText">博客标题</div>
         </div>
         <div class="blogTags">
           <el-select
             class="selectTag"
-            v-model="blogTags"
+            v-model="blogData.blogTags"
             multiple
             filterable
             allow-create
@@ -39,16 +39,18 @@
 </template>
  
 <script>
-import { formatDateTime } from "common/utils";
+import { formatDateTime, deepClone } from "common/utils";
 
 export default {
   name: "",
   data() {
     return {
-      blogTitle: "",
-      blogContent: "",
-      blogTags: "",
-      blogPutoutDate: "1",
+      blogData: {
+        blogTitle: "",
+        blogContent: "",
+        blogTags: "",
+        blogPutoutDate: "",
+      },
       tags: [
         {
           value: "HTML",
@@ -63,12 +65,16 @@ export default {
           value: "Vue",
         },
       ],
+      blogDataList: [],
       hintTextAnimation: false,
     };
   },
   methods: {
     issue() {
-      this.blogPutoutDate = formatDateTime(new Date());
+      this.blogData.blogPutoutDate = formatDateTime(new Date());
+      let blogData = deepClone(this.blogData);
+      this.blogDataList.push(blogData);
+      localStorage.setItem("blogDatas", JSON.stringify(this.blogDataList));
     },
   },
 };

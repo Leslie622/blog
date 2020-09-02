@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MainNavBar from "components/content/mainnavbar/MainNavBar";
+import MainNavBar from "components/content/main-navbar/MainNavBar";
 import VueParticles from "components/common/vue-particles/VueParticles";
 import CheckUser from "components/content/check-user/CheckUser";
 

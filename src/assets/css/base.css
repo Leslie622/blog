@@ -1,4 +1,4 @@
-@import "./normalize.css";
+@import "./normalize/normalize.css";
 /* 字体 */
 
 @font-face {
@@ -12,14 +12,11 @@
 }
 
 body {
-  overflow: hidden;
   min-width: 1400px;
   height: 100vh;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  background-size: cover;
-  background-repeat: no-repeat;
+  overflow: hidden;
   user-select: none;
-  transition: all .5s;
 }
 
 /* 背景粒子特效范围 */

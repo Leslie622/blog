@@ -16,19 +16,27 @@ const routes = [
   },
   {
     path: '/home',
-    component: BlogHome
+    name: "BlogHome",
+    component: BlogHome,
+    meta: { title: 'Home | Leslie' }
   },
   {
     path: '/mainblog',
-    component: MainBlog
+    name: "MainBlog",
+    component: MainBlog,
+    meta: { title: 'Blog | Leslie' }
   },
   {
     path: '/diary',
-    component: Diary
+    name: "Diary",
+    component: Diary,
+    meta: { title: 'Diary | Leslie' }
   },
   {
     path: '/mark',
-    component: Mark
+    name: "Mark",
+    component: Mark,
+    meta: { title: 'Mark | Leslie' }
   },
 ]
 
@@ -36,5 +44,15 @@ const router = new VueRouter({
   routes,
   mode: 'history',
 })
+
+
+router.beforeEach((to, from, next) => {
+  /* 路由发生变化修改页面title */
+  if (to.meta.title) {
+    document.title = to.meta.title || '首页'
+  }
+  next()
+})
+
 
 export default router
