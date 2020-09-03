@@ -53,6 +53,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 0;
   width: 100vw;
   height: 100vh;
   background: url("~assets/img/bg/checkUser.png") center / 110% no-repeat;

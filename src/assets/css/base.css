@@ -15,7 +15,6 @@ body {
   min-width: 1400px;
   height: 100vh;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  overflow: hidden;
   user-select: none;
 }
 
@@ -40,3 +39,11 @@ body {
 .checkUserPGTransition-enter, .checkUserPGTransition-leave-to {
   transform: translateX(-100%);
 }
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
