@@ -1,6 +1,7 @@
 <template>
-  <transition appear enter-active-class="animate__animated animate__zoomIn">
-    <div id="navbar">
+  <transition appear  enter-active-class="animate__animated animate__backInRight"
+  leave-active-class="animate__animated animate__backOutRight">
+    <div id="navbar" >
       <div class="container">
         <site-logo @click.native="controlCheckUserPG" />
         <nav-bar-category />
@@ -32,26 +33,22 @@ export default {
 
 
 <style  scoped>
-/* --------ele导航样式表（导航+下拉菜单)-------- */
-@import "~assets/css/ele-style/main-navbar.css";
-
 #navbar {
   position: fixed;
-  top: 10px;
-  right: 10px;
-  left: 10px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.95);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0 100%);
 }
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  min-width: 1400px;
-  height: 80px;
-  padding: 0 100px;
-  border-radius: 15px;
-  font-family: ios7;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
-  background-color: var(--navBg);
+  font-family: 幼圆;
 }
+
 </style>

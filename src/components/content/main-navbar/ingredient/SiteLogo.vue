@@ -1,17 +1,7 @@
 <template>
-  <div>
-    <div>
-      <div class="siteLogoContainer">
-        <div class="avatar">
-          <img src="~assets/img/myAvatar/myAvatar.jpg" alt="网络头像" />
-        </div>
-        <div class="siteLogo">
-          <i>
-            Leslie
-            <sup class="logoSup">blog</sup>
-          </i>
-        </div>
-      </div>
+  <div class="sitelog">
+    <div class="avatar">
+      <img src="~assets/img/myAvatar/myAvatar.jpg" alt="网络头像" />
     </div>
   </div>
 </template>
@@ -23,22 +13,30 @@ export default {
 </script>
 
 <style scoped>
-.siteLogoContainer {
+.sitelog {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  margin-top: 70px;
   cursor: pointer;
 }
-.siteLogo {
-  font-size: 55px;
-  text-shadow: var(--logTextShadow);
-  color: var(--logoTextColor);
+
+.sitelog::before {
+  content: "";
+  position: absolute;
+  right: 55px;
+  bottom: 0;
+  width: 200px;
+  height: 1px;
+  border-bottom: 2px dashed rgba(128, 128, 128, 0.4);
 }
-.logoSup {
-  font-size: 25px;
-}
+
 .avatar img {
-  width: 50px;
-  margin-right: 20px;
+  width: 80px;
+  margin-left: 80px;
   border-radius: 3px;
 }
 </style>

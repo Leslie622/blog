@@ -76,6 +76,7 @@ export default {
   height: 480px;
   background: linear-gradient(60deg, rgb(20, 113, 160), rgb(121, 150, 223));
   clip-path: polygon(0 0, 48% 0, 55% 100%, 0 100%);
+
 }
 
 .hint {

@@ -1,83 +1,55 @@
 <template>
-  <div>
-    <div class="navCategory">
-      <el-menu
-        mode="horizontal"
-        menu-trigger="click"
-        router
-        :default-active="$route.path"
-        class="navMenu"
-      >
-        <el-menu-item index="/home">首页</el-menu-item>
-        <el-menu-item index="/mainblog">博客</el-menu-item>
-        <el-menu-item index="/diary">日记</el-menu-item>
-        <el-menu-item index="/mark">留言</el-menu-item>
-      </el-menu>
-      <el-dropdown trigger="click" class="dropDown" @command="changeThemes" placement="bottom">
-        <div class="el-dropdown-link">
-          主题
-          <i class="el-icon-arrow-down el-icon--right"></i>
-        </div>
-        <el-dropdown-menu slot="dropdown" class="dropdownMenu">
-          <el-dropdown-item
-            v-for="(item,key) in themeConfig"
-            :command="item.config"
-            :key="key"
-          >{{item.theme}}</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-    </div>
+  <div class="navCategory">
+    <router-link v-for="(item,index) in pathList" :to="item.path" :key="index" class="routerLink">
+      <div>{{item.name}}</div>
+    </router-link>
   </div>
 </template>
  
 <script>
-import toggleTheme from "common/themes";
-import {
-  evenfallConfig,
-  conciseConfig,
-  nightConfig,
-  closePariticles,
-} from "common/pariticles";
-
 export default {
   name: "",
   data() {
     return {
-      themeConfig: [
-        {
-          theme: "' 一抹黄 '",
-          config: evenfallConfig,
-        },
-        {
-          theme: "灰白",
-          config: conciseConfig,
-        },
-        {
-          theme: "皓月",
-          config: nightConfig,
-        },
-        {
-          theme: "关闭粒子特效",
-          config: closePariticles,
-        },
+      pathList: [
+        { path: "/home", name: "Home" },
+        { path: "/mainblog", name: "Blog" },
+        { path: "diary", name: "Diary" },
+        { path: "mark", name: "Mark" },
       ],
     };
   },
-  methods: {
-    //切换主题
-    changeThemes(themesConfig) {
-      if (themesConfig.themes) {
-        toggleTheme(themesConfig.themes);
-      }
-      this.$bus.$emit("toggleParticles", themesConfig);
-    },
-  },
+  methods: {},
 };
 </script>
 
 <style scoped>
 .navCategory {
-  display: flex;
-  align-items: center;
+  position: absolute;
+  top: 250px;
+  right: 45px;
+  font-family: CabinSketch;
+  font-size: 28px;
 }
+.routerLink {
+  position: relative;
+  display: block;
+  width: 230px;
+  height: 70px;
+  margin: 10px 0;
+  text-align: center;
+  line-height: 70px;
+  color: black;
+  clip-path: polygon(90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%, 10% 0);
+}
+
+.routerLink:hover {
+  color: rgb(216, 0, 0);
+}
+
+.routerLink.router-link-exact-active {
+  color: rgb(216, 0, 0);
+}
+
+
 </style>

@@ -7,8 +7,11 @@ import ElementUI from "element-ui"
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
-/* 引入animate.css库 */
+// 引入animate.css库 
 import 'animate.css';
+
+// 阿里图标库
+import "common/iconfont"
 
 // vue背景特效
 import VueParticles from 'vue-particles'

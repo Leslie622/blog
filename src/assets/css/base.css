@@ -1,15 +1,18 @@
 @import "./normalize/normalize.css";
-/* 字体 */
-
+@import "../css/iconfont/iconfont.css";
 @font-face {
   font-family: "ios7";
   src: url(../font/ios7.ttf);
 }
-
 @font-face {
   font-family: "幼圆";
   src: url(../font/youyuan.TTF);
 }
+@font-face {
+  font-family: "CabinSketch";
+  src: url(../font/CabinSketch.ttf);
+}
+
 
 body {
   min-width: 1400px;
@@ -46,4 +49,23 @@ body {
   display: none;
 }
 
+/* ityped光标样式 */
 
+.ityped-cursor {
+  opacity: 1;
+  font-size: 50px;
+  animation: blink .6s infinite;
+}
+
+@keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
+
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
