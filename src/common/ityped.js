@@ -6,7 +6,7 @@ export function ityped(ele, strings) {
     showCursor: true,
     strings: strings,
     loop: false,
-    startDelay:2000, 
+    startDelay:1000, 
     onFinished: function () {
       const oneElement = document.querySelector(".ityped-cursor");
       oneElement.style.display = "none";

@@ -3,7 +3,7 @@
     <transition appear enter-active-class="animate__animated animate__zoomInDown">
       <div class="container">
         <span class="bannerText"></span>
-        <home-contact />
+        <home-banner-contact />
       </div>
     </transition>
     <home-banner-decor />
@@ -12,7 +12,7 @@
  
 <script>
 import HomeBannerDecor from "../ingredient/HomeBannerDecor";
-import HomeContact from "../ingredient/HomeContact";
+import HomeBannerContact from "../ingredient/HomeBannerContact";
 import { ityped } from "common/ityped";
 
 export default {
@@ -22,7 +22,7 @@ export default {
   },
   components: {
     HomeBannerDecor,
-    HomeContact,
+    HomeBannerContact,
   },
 };
 </script>

@@ -15,9 +15,6 @@ import CheckUser from "components/content/check-user/CheckUser";
 // 粒子插件
 import VueParticles from "components/common/vue-particles/VueParticles";
 
-
-
-
 export default {
   name: "Blog",
   data() {

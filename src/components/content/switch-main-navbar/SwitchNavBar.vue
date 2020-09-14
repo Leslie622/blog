@@ -9,6 +9,8 @@
 </template>
  
 <script>
+import CssMask from "../../common/mask/CssMask"
+
 export default {
   name: "",
   data() {
@@ -21,6 +23,9 @@ export default {
       this.isActive = !this.isActive;
     },
   },
+  components:{
+    CssMask,
+  }
 };
 </script>
 

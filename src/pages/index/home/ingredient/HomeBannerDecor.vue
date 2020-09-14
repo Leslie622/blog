@@ -1,12 +1,12 @@
 <template>
   <div>
+    <transition appear enter-active-class="animate__animated animate__slideInUp animate__delay-2s">
+      <div class="decor"></div>
+    </transition>
     <transition appear enter-active-class="animate__animated animate__slideInUp animate__delay-3s">
       <div class="decor"></div>
     </transition>
     <transition appear enter-active-class="animate__animated animate__slideInUp animate__delay-4s">
-      <div class="decor"></div>
-    </transition>
-    <transition appear enter-active-class="animate__animated animate__slideInUp animate__delay-5s">
       <div class="decor"></div>
     </transition>
   </div>
@@ -44,9 +44,8 @@ export default {
   background-color: rgba(255, 255, 255, 0.3);
   clip-path: polygon(50% 0, 100% 35%, 100% 100%, 50% 100%, 0 100%, 0 35%);
 }
-</style>
-<style>
-:root {
-  --animate-delay: 0.2s;
+
+.animate__slideInUp {
+  --animate-delay: 0.3s;
 }
 </style>

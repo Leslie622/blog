@@ -1,7 +1,10 @@
 <template>
-  <transition appear  enter-active-class="animate__animated animate__backInRight"
-  leave-active-class="animate__animated animate__backOutRight">
-    <div id="navbar" >
+  <transition
+    appear
+    enter-active-class="animate__animated animate__slideInRight"
+    leave-active-class="animate__animated animate__backOutRight"
+  >
+    <div id="navbar">
       <div class="container">
         <site-logo @click.native="controlCheckUserPG" />
         <nav-bar-category />
@@ -51,4 +54,7 @@ export default {
   font-family: 幼圆;
 }
 
+.animate__slideInRight {
+  --animate-duration: 0.3s;
+}
 </style>
