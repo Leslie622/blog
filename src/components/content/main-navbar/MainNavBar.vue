@@ -6,8 +6,8 @@
   >
     <div id="navbar">
       <div class="container">
-        <site-logo @click.native="controlCheckUserPG" />
-        <nav-bar-category />
+        <site-logo @click.native="controlCheckUserPG();ControlBus()" />
+        <nav-bar-category @click.native="ControlBus" />
       </div>
     </div>
   </transition>
@@ -25,6 +25,10 @@ export default {
   methods: {
     controlCheckUserPG() {
       this.$emit("switchCheckUserPG", true);
+      console.log("1231");
+    },
+    ControlBus() {
+      this.$emit("ControlBus");
     },
   },
   components: {
@@ -41,8 +45,9 @@ export default {
   top: 0;
   right: 0;
   bottom: 0;
+  z-index: 2;
   width: 400px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: white;
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0 100%);
 }
 

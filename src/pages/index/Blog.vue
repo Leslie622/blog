@@ -1,16 +1,17 @@
 <template>
   <div id="blog">
     <router-view />
-    <main-nav-bar @switchCheckUserPG="switchCheckUserPG" v-if="isMainNavBarPG" />
-    <switch-nav-bar @click.native="contorlMainNavBarPG"></switch-nav-bar>
-    <check-user v-if="isCheckUserPG" @switchCheckUserPG="switchCheckUserPG"></check-user>
+    <switch-nav-bar @click.native="ControlBus" ref="switchNavbar"></switch-nav-bar>
+    <main-nav-bar v-if="isMainNavbarPG" @ControlBus="ControlBus" @switchCheckUserPG="switchCheckUserPG"/>
+    <check-user v-if="isCheckUserPG"  @switchCheckUserPG="switchCheckUserPG"></check-user>
+    <css-mask v-if="isMaskPG"></css-mask>
   </div>
 </template>
-
 <script>
 import MainNavBar from "components/content/main-navbar/MainNavBar";
-import SwitchNavBar from "../../components/content/switch-main-navbar/SwitchNavBar";
+import SwitchNavBar from "components/content/switch-main-navbar/SwitchNavBar";
 import CheckUser from "components/content/check-user/CheckUser";
+import CssMask from "components/common/mask/CssMask";
 
 // 粒子插件
 import VueParticles from "components/common/vue-particles/VueParticles";
@@ -19,16 +20,21 @@ export default {
   name: "Blog",
   data() {
     return {
+      isMaskPG: false,
+      isMainNavbarPG: false,
       isCheckUserPG: false,
-      isMainNavBarPG: false,
+      switchNavBarActive: true,
     };
   },
   methods: {
     switchCheckUserPG(isCheckUserPG) {
       this.isCheckUserPG = isCheckUserPG;
+      console.log(":1321");
     },
-    contorlMainNavBarPG() {
-      this.isMainNavBarPG = !this.isMainNavBarPG;
+    ControlBus() {
+      this.isMainNavbarPG = !this.isMainNavbarPG;
+      this.isMaskPG = !this.isMaskPG;
+      this.$refs.switchNavbar.isActive = !this.$refs.switchNavbar.isActive;
     },
   },
   components: {
@@ -36,6 +42,7 @@ export default {
     VueParticles,
     CheckUser,
     SwitchNavBar,
+    CssMask,
   },
 };
 </script>

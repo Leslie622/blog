@@ -1,5 +1,5 @@
 <template>
-  <div class="SwitchNavBarBtn" :class="{active:isActive}" @click="SwitchNavBar">
+  <div class="SwitchNavBarBtn" :class="{active:isActive}">
     <div class="wrapper">
       <span class="Switchicon"></span>
       <span class="Switchicon"></span>
@@ -9,8 +9,6 @@
 </template>
  
 <script>
-import CssMask from "../../common/mask/CssMask"
-
 export default {
   name: "",
   data() {
@@ -18,14 +16,6 @@ export default {
       isActive: false,
     };
   },
-  methods: {
-    SwitchNavBar() {
-      this.isActive = !this.isActive;
-    },
-  },
-  components:{
-    CssMask,
-  }
 };
 </script>
 
@@ -36,31 +26,36 @@ export default {
   align-items: center;
   justify-content: center;
   top: 20px;
-  border-radius: 50%;
   right: 50px;
+  z-index: 3;
   width: 50px;
   height: 50px;
-  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .22), 0 0 4px rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .1);
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22), 0 0 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .SwitchNavBarBtn .Switchicon {
   display: block;
   padding: 4px 0;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 }
 
 .SwitchNavBarBtn .Switchicon::before {
   content: "";
   display: block;
-  height: 2px;
   width: 30px;
+  height: 2px;
   background-color: #fff;
+  transition: transform .2s ease .1s, background-color .3s ease;
+
   border-top-right-radius: 2px;
   border-bottom-left-radius: 2px;
-  transition: transform 0.2s ease 0.1s, background-color 1.5s ease;
+}
+
+.active.SwitchNavBarBtn {
+  background-color: transparent;
 }
 
 .active .Switchicon::before {
@@ -80,11 +75,12 @@ export default {
 }
 
 .active .Switchicon:nth-child(2) {
-  transition: none;
   opacity: 0;
+  transition: none;
 }
 
 .active .Switchicon:nth-child(3) {
   transform: translateY(-10px);
 }
+
 </style>

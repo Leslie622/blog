@@ -1,7 +1,7 @@
 <template>
   <div class="sitelog">
     <div class="avatar">
-      <img src="~assets/img/myAvatar/myAvatar.jpg" alt="网络头像" />
+      <img src="~assets/img/myAvatar/myAvatar.jpg" alt="网络头像" title="点击进入后台管理" />
     </div>
   </div>
 </template>

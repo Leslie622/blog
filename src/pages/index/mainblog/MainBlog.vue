@@ -1,30 +1,22 @@
 <template>
   <div>
-    <div  v-for="(item,index) in blogDatas" :key="index">
-      <span>{{item.blogTitle}}</span>
-      <div>{{item.blogContent}}</div>
-    </div>
+    <blog-menu />
   </div>
 </template>
  
 <script>
+import BlogMenu from "../mainblog/ingredient/BlogMenu";
+
 export default {
   name: "",
   data() {
-    return {
-      blogDatas: null,
-    };
+    return {};
   },
-  mounted() {
-    this.blogDatas = JSON.parse(window.localStorage.getItem("blogDatas"));
-    console.log(this.blogDatas);
+  components: {
+    BlogMenu,
   },
 };
 </script>
 
 <style scoped>
-
-body {
-  background: antiquewhite;
-}
 </style>

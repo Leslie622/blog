@@ -54,6 +54,7 @@ export default {
   align-items: center;
   justify-content: center;
   top: 0;
+  z-index: 4;
   width: 100vw;
   height: 100vh;
   background: url("~assets/img/bg/checkUser.png") center / 110% no-repeat;
@@ -76,7 +77,6 @@ export default {
   height: 480px;
   background: linear-gradient(60deg, rgb(20, 113, 160), rgb(121, 150, 223));
   clip-path: polygon(0 0, 48% 0, 55% 100%, 0 100%);
-
 }
 
 .hint {

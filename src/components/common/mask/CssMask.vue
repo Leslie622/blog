@@ -11,9 +11,10 @@ export default {
 <style scoped>
 .mask {
   position: fixed;
-  z-index: 3;
-  height: 100vh;
-  width: 100vw;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
 </style>
