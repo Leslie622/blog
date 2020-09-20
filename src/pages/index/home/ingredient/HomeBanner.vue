@@ -1,11 +1,9 @@
 <template>
   <div class="banner">
-    <transition appear enter-active-class="animate__animated animate__zoomInDown">
       <div class="container">
         <span class="bannerText"></span>
         <home-banner-contact />
       </div>
-    </transition>
     <home-banner-decor />
   </div>
 </template>
@@ -13,12 +11,13 @@
 <script>
 import HomeBannerDecor from "../ingredient/HomeBannerDecor";
 import HomeBannerContact from "../ingredient/HomeBannerContact";
+
 import { ityped } from "common/ityped";
 
 export default {
   name: "",
   mounted() {
-    ityped(".bannerText", ["风继续吹", "Leslie"]);
+    ityped(".bannerText", ["风继续吹", "LESLIE"]);
   },
   components: {
     HomeBannerDecor,

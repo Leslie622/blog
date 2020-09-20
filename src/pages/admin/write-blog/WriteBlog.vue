@@ -6,6 +6,7 @@
         class="mavonEditor"
         previewBackground="ffffff"
         codeStyle="tomorrow"
+        ref="md"
       />
     </transition>
     <transition appear enter-active-class="animate__animated animate__zoomInDown">
@@ -64,6 +65,9 @@ export default {
         {
           value: "Vue",
         },
+        {
+          value: "Webpack",
+        },
       ],
       blogDataList: [],
       hintTextAnimation: false,
@@ -71,6 +75,8 @@ export default {
   },
   methods: {
     issue() {
+      this.blogData.blogContent = this.$refs.md.d_render;
+      console.log(this.$refs.md.d_render);
       this.blogData.blogPutoutDate = formatDateTime(new Date());
       let blogData = deepClone(this.blogData);
       this.blogDataList.push(blogData);
@@ -84,7 +90,7 @@ export default {
 /* 编辑器样式 */
 @import "~assets/css/mavon-editor-style/mavon-editor.css";
 
-@import "../../../assets/css/ele-style/admin/admin-writeBlog-select.css";
+@import "~assets/css/ele-style/admin/admin-writeBlog-select.css";
 
 .writeBlog {
   position: absolute;

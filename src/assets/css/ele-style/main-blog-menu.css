@@ -1,40 +1,37 @@
 .blogMenu.el-col {
-  padding: 10px 20px;
+  padding: 10px 15px;
 }
 
 .blogMenu .el-menu-vertical-demo {
-  height: calc(100vh - 30px);
+  height: calc(100vh - 20px);
   border-radius: 15px;
+  overflow: hidden;
   box-shadow: 0 2px 12px 0 rgb(0, 0, 0, .1);
 }
 
 .blogMenu .el-menu-vertical-demo>li {
   font-size: 20px;
-  transition: 0s;
+  transition: all .1s;
 }
 
-.el-menu-item:focus, .el-menu-item:hover {
-  background-color: transparent;
-}
-
-.blogMenu .el-menu-item:nth-child(1).is-active,
-.el-menu-item:nth-child(1):focus, .el-menu-item:nth-child(1):hover {
+.el-menu-item:nth-child(1).is-active, .el-menu-item:nth-child(1):focus, .el-menu-item:nth-child(1):hover {
   color: rgb(228, 79, 38);
+  background-color: #e2e2e2;
 }
 
-.blogMenu .el-menu-item:nth-child(2).is-active,
-.el-menu-item:nth-child(2):focus, .el-menu-item:nth-child(2):hover {
+.el-menu-item:nth-child(2).is-active, .el-menu-item:nth-child(2):focus, .el-menu-item:nth-child(2):hover {
   color: rgb(21, 114, 182);
+  background-color: #e2e2e2;
 }
 
-.blogMenu .el-menu-item:nth-child(3).is-active,
-.el-menu-item:nth-child(3):focus, .el-menu-item:nth-child(3):hover{
-  color: rgb(251, 192, 45);
+.el-menu-item:nth-child(3).is-active, .el-menu-item:nth-child(3):focus, .el-menu-item:nth-child(3):hover {
+  color: rgb(255, 192, 34);
+  background-color: #e2e2e2;
 }
 
-.blogMenu .el-menu-item:nth-child(4).is-active,
-.el-menu-item:nth-child(4):focus, .el-menu-item:nth-child(4):hover {
+.el-menu-item:nth-child(4).is-active, .el-menu-item:nth-child(4):focus, .el-menu-item:nth-child(4):hover {
   color: rgb(65, 184, 131);
+  background-color: #e2e2e2;
 }
 
 .iconfont {

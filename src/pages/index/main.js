@@ -2,6 +2,16 @@ import Vue from 'vue'
 import Blog from './Blog.vue'
 import router from "../../router/index"
 
+
+import axios from "axios"
+
+
+//引入markdowm编辑器
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+Vue.use(mavonEditor)
+
+
 // 引入并使用elementUI
 import ElementUI from "element-ui"
 import 'element-ui/lib/theme-chalk/index.css';
@@ -27,4 +37,3 @@ new Vue({
   render: h => h(Blog),
   router
 }).$mount('#blog')
-

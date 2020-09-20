@@ -1,4 +1,5 @@
 <template>
+  <transition appear enter-active-class="animate__animated animate__zoomIn">
     <el-col :span="4" class="blogMenu">
       <el-menu default-active="2" class="el-menu-vertical-demo">
         <el-menu-item index="1">
@@ -19,6 +20,7 @@
         </el-menu-item>
       </el-menu>
     </el-col>
+  </transition>
 </template>
  
 <script>
@@ -28,5 +30,5 @@ export default {
 </script>
 
 <style scoped>
-@import "~assets/css/ele-style/main-blog-menu.css"
+@import "~assets/css/ele-style/main-blog-menu.css";
 </style>

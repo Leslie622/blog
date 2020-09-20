@@ -1,11 +1,13 @@
 <template>
-  <div class="SwitchNavBarBtn" :class="{active:isActive}">
-    <div class="wrapper">
-      <span class="Switchicon"></span>
-      <span class="Switchicon"></span>
-      <span class="Switchicon"></span>
+  <transition appear enter-active-class="animate__animated animate__jackInTheBox">
+    <div class="SwitchNavBarBtn" :class="{active:isActive}">
+      <div class="wrapper">
+        <span class="Switchicon"></span>
+        <span class="Switchicon"></span>
+        <span class="Switchicon"></span>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
  
 <script>
@@ -31,15 +33,15 @@ export default {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, .22), 0 0 4px rgba(0, 0, 0, .1);
-  background-color: rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.22), 0 0 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
 .SwitchNavBarBtn .Switchicon {
   display: block;
   padding: 4px 0;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .SwitchNavBarBtn .Switchicon::before {
@@ -48,7 +50,7 @@ export default {
   width: 30px;
   height: 2px;
   background-color: #fff;
-  transition: transform .2s ease .1s, background-color .3s ease;
+  transition: transform 0.2s ease 0.1s, background-color 0.3s ease;
 
   border-top-right-radius: 2px;
   border-bottom-left-radius: 2px;
@@ -82,5 +84,4 @@ export default {
 .active .Switchicon:nth-child(3) {
   transform: translateY(-10px);
 }
-
 </style>

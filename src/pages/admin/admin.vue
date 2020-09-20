@@ -22,9 +22,4 @@ export default {
 <style>
 /* 样式初始化 */
 @import "../../assets/css/admin-base.css";
-
-.aa {
-  position: relative;
-  z-index: 100;
-}
 </style>

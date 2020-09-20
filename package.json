@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "animate.css": "^4.1.0",
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "easy-typer-js": "^2.1.0",
     "element-ui": "^2.13.2",
     "ityped": "^1.0.3",
+    "marked": "^1.1.1",
     "mavon-editor": "^2.9.0",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.11",

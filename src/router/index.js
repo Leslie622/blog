@@ -6,6 +6,7 @@ const BlogHome = () => import('../pages/index/home/BlogHome.vue')
 const MainBlog = () => import('../pages/index/mainblog/MainBlog.vue')
 const Diary = () => import('../pages/index/diary/Diary.vue')
 const Mark = () => import('../pages/index/mark/Mark.vue')
+const Detail = () => import('../pages/index/detail/Detail.vue')
 
 Vue.use(VueRouter)
 
@@ -37,6 +38,12 @@ const routes = [
     name: "Mark",
     component: Mark,
     meta: { title: 'Mark | Leslie' }
+  },
+  {
+    path: '/Detail',
+    name: "Detail",
+    component: Detail,
+    meta: { title: 'Detail | Leslie' }
   },
 ]
 

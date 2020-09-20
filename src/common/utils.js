@@ -23,3 +23,34 @@ export function deepClone(obj) {
 }
 
 
+//文章标签动态背景
+
+export function DynamicBG(blogTag) {
+  switch (blogTag) {
+    case "HTML":
+      return {
+        backgroundColor: "rgb(228, 79, 38)",
+      };
+      break;
+    case "CSS":
+      return {
+        backgroundColor: " rgb(21, 114, 182)",
+      };
+      break;
+    case "JavaScript":
+      return {
+        backgroundColor: "rgb(255, 192, 34)",
+      };
+      break;
+    case "Vue":
+      return {
+        backgroundColor: "rgb(65, 184, 131)",
+      };
+      break;
+    case "Webpack":
+      return {
+        backgroundColor: "rgb(85,167,221)",
+      };
+      break;
+  }
+}

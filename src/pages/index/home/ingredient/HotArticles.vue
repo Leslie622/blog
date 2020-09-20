@@ -2,13 +2,12 @@
   <div class="wrapper">
     <div class="title">聚焦</div>
     <div class="container">
-      <main-articles></main-articles>
     </div>
   </div>
 </template>
  
 <script>
-import MainArticles from "../../mainblog/ingredient/MainArticles";
+import ArticlesListItem from "../../mainblog/ingredient/ArticlesListItem";
 
 export default {
   name: "",
@@ -16,7 +15,7 @@ export default {
     return {};
   },
   components: {
-    MainArticles,
+    ArticlesListItem,
   },
 };
 </script>
