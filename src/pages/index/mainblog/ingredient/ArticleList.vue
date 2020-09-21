@@ -1,5 +1,5 @@
 <template>
-  <transition appear enter-active-class="animate__animated animate__zoomIn">
+  <transition appear enter-active-class="animate__animated animate__zoomIn animate__faster">
     <div class="wrapper">
       <div class="articleList">
         <div class="articleListContainer">

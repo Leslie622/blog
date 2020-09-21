@@ -18,16 +18,15 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   height: 160px;
-  margin-top: 70px;
+  margin: 70px 0 0 200px;
   cursor: pointer;
 }
 
 .sitelog::before {
   content: "";
   position: absolute;
-  right: 55px;
+  right: -60px;
   bottom: 0;
   width: 200px;
   height: 1px;
@@ -36,7 +35,8 @@ export default {
 
 .avatar img {
   width: 80px;
-  margin-left: 80px;
+
+  /* margin-left: 80px; */
   border-radius: 3px;
 }
 </style>

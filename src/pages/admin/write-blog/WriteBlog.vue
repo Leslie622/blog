@@ -49,6 +49,7 @@ export default {
       blogData: {
         blogTitle: "",
         blogContent: "",
+        blogContentHTML: "",
         blogTags: "",
         blogPutoutDate: "",
       },
@@ -75,8 +76,8 @@ export default {
   },
   methods: {
     issue() {
-      this.blogData.blogContent = this.$refs.md.d_render;
-      console.log(this.$refs.md.d_render);
+      this.blogData.blogContentHTML = this.$refs.md.d_render;
+      console.log(this.blogData.blogContentHTML);
       this.blogData.blogPutoutDate = formatDateTime(new Date());
       let blogData = deepClone(this.blogData);
       this.blogDataList.push(blogData);
@@ -88,7 +89,7 @@ export default {
 
 <style scoped>
 /* 编辑器样式 */
-@import "~assets/css/mavon-editor-style/mavon-editor.css";
+@import "~assets/css/mavon-editor-style/mavon-editor-admin.css";
 
 @import "~assets/css/ele-style/admin/admin-writeBlog-select.css";
 

@@ -1,9 +1,17 @@
 <template>
-  <div>
-    <div class="mulu"></div>
-    <!-- <p><h3>目录</h3><ul><li><a href="#_1">（一）定义</a></li><li><a href="#HTML_4">（二）HTML事件处理函数</a></li><ul><li><a href="#__16">① 特点</a></li><li><a href="#__46">② 缺点</a></li></ul><li><a href="#DOM0_56">（三）DOM0级事件处理函数</a></li><ul><li><a href="#__58">① 使用</a></li><li><a href="#__77">② 删除</a></li><li><a href="#__89">③ 缺点</a></li></ul><li><a href="#DOM2_94">（四）DOM2级事件处理函数</a></li><ul><li><a href="#__100">① 使用</a></li><li><a href="#__110">② 删除</a></li><li><a href="#__115">③ 注意</a></li></ul></ul></p> -->
-    <mavon-editor v-html="blogContent" class="show" />
-  </div>
+  <transition enter-active-class="animate__animated animate__zoomIn animate__faster" appear>
+    <div class="container">
+      <div class="toc"></div>
+      <div class="content">
+        <mavon-editor
+          v-html="blogContentHTML"
+          codeStyle="tomorrow"
+          :boxShadow="false"
+          class="articleContent"
+        />
+      </div>
+    </div>
+  </transition>
 </template>
  
 <script>
@@ -12,32 +20,61 @@ export default {
   name: "",
   data() {
     return {
-      blogContent: null,
+      blogContentHTML: null,
     };
   },
   created() {
-    this.blogContent = this.$route.query.blogContent;
+    //获取数据
+    this.blogContentHTML = JSON.parse(
+      window.localStorage.getItem("blogDatas")
+    )[0].blogContentHTML;
+    //创建完成时关闭导航
+    this.$bus.$emit("switchMenu", false);
   },
-  // mounted() {
-  //   let ul = document.querySelectorAll("ul")[0];
-  //   console.log(ul.cloneNode(true));
-  //   let mulu = document.querySelector(".mulu")
-  //   mulu.appendChild(ul)
-  // },
+  mounted() {
+    //克隆目录节点
+    let ul = document.querySelectorAll("ul")[0];
+    let h3 = document.querySelectorAll("h3")[0];
+    let mulu = document.querySelector(".toc");
+    mulu.appendChild(h3);
+    mulu.appendChild(ul);
+  },
+  destroyed() {
+    //销毁完成时渲染导航
+    this.$bus.$emit("switchMenu", true);
+  },
 };
 </script>
 
 <style scoped>
-@import "~assets/css/mavon-editor-style/mavon-editor.css";
+@import "~assets/css/mavon-editor-style/mavon-editor-index.css";
 
-.show {
-  width: 50%;
-  padding: 20px;
+.container {
+  height: 100vh;
+  overflow-y: scroll;
 }
 
-.mulu{
+.toc {
   position: fixed;
-  top: 20px;
-  right: 0;
+  width: 400px;
+  height: 100vh;
+  margin-left: 20px;
+  padding: 10px;
+  border-right: 1px solid rgb(204, 204, 204);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.content {
+  width: 50%;
+  margin-left: 550px;
+  font-family: 幼圆;
+}
+
+.articleContent {
+  z-index: 0;
+  padding: 0 20px 80px;
+  font-family: 幼圆;
+  font-size: 18px;
 }
 </style>

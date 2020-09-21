@@ -44,7 +44,8 @@ export default {
     DynamicBG,
     itemClick() {
       //跳转到详情页并携带内容
-      this.$router.push({ path: "/detail", query: { blogContent: this.blogData.blogContent } });
+      this.$router.push({ path: "/detail" });
+      // , query: { blogContentHTML: this.blogData.blogContentHTML }
     },
   },
 };

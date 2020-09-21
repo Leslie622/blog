@@ -27,7 +27,7 @@ export default {
 
 <style scoped>
 /* 编辑器样式 */
-@import "~assets/css/mavon-editor-style/mavon-editor.css";
+@import "~assets/css/mavon-editor-style/mavon-editor-admin.css";
 
 .writeBlog {
   position: absolute;

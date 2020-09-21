@@ -9,12 +9,11 @@
           <div class="verify">
             <div class="verifyContent">
               <div class="formContent">
-                <input type="text" class="verifyInput" />
+                <input type="text" class="verifyInput" v-model="account" />
+                <input type="text" class="verifyInput" v-model="password" />
                 <div class="verifyText">请输入密码</div>
               </div>
-              <a href="/admin.html/writeblog">
-                <div class="enter checkUserButton">Enter</div>
-              </a>
+              <div class="enter checkUserButton" @click="LoginRequest">Enter</div>
             </div>
           </div>
           <div class="hint">
@@ -27,6 +26,7 @@
               <div class="back checkUserButton" @click="controlCheckUserPG">Back</div>
             </div>
           </div>
+          <el-button plain @click="open4">错误</el-button>
         </div>
       </transition>
     </div>
@@ -34,14 +34,41 @@
 </template>
  
 <script>
+import { request } from "../../../network/request";
+import axios from "axios";
 export default {
   name: "",
   data() {
-    return {};
+    return {
+      account: "",
+      password: "",
+    };
   },
   methods: {
     controlCheckUserPG() {
       this.$emit("switchCheckUserPG", false);
+    },
+    open4() {
+      this.$notify.error({
+        title: "输入有误",
+        message: "您输入的账号或密码有错误",
+        duration: 2000,
+      });
+    },
+    LoginRequest() {
+      request({
+        url: "/login",
+        data: {
+          account: this.account,
+          password: this.password,
+        },
+      }).then((res) => {
+        if (res.data.code === 200) {
+          window.location.href = "/admin.html/writeblog";
+        } else {
+          this.open4();
+        }
+      });
     },
   },
 };
@@ -58,7 +85,7 @@ export default {
   width: 100vw;
   height: 100vh;
   background: url("~assets/img/bg/checkUser.png") center / 110% no-repeat;
-  animation: rollbg 20s infinite;
+  animation: rollbg 20s linear  infinite;
 }
 
 .content {

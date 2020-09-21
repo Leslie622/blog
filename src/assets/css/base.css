@@ -18,7 +18,6 @@ body {
   min-width: 1400px;
   height: 100vh;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  /* user-select: none; */
   background-color: white;
 }
 
@@ -45,13 +44,21 @@ body {
   transform: translateX(-100%);
 }
 
-/* 隐藏滚动条 */
+/* 滚动条 */
 
 ::-webkit-scrollbar {
-  display: none;
+  border-radius: 15px;
+  width: 10px;
+  /* background-color: red; */
 } 
 
-/* ityped光标样式 */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 15px;
+  border-radius: 4px;
+  background-color: rgb(233, 233, 233); 
+}
+
+/* ityped光标 */
 
 .ityped-cursor {
   opacity: 1;

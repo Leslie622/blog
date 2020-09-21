@@ -1,9 +1,18 @@
 <template>
   <div id="blog">
     <router-view />
-    <switch-nav-bar @click.native="ControlBus" ref="switchNavbar"></switch-nav-bar>
-    <main-nav-bar v-if="isMainNavbarPG" @ControlBus="ControlBus" @switchCheckUserPG="switchCheckUserPG"/>
-    <check-user v-if="isCheckUserPG"  @switchCheckUserPG="switchCheckUserPG"></check-user>
+    <switch-nav-bar
+      @click.native="ControlBus"
+      ref="switchNavbar"
+      v-if="switchMenu"
+      @switchMenu="switchMenu"
+    ></switch-nav-bar>
+    <main-nav-bar
+      v-if="isMainNavbarPG"
+      @ControlBus="ControlBus"
+      @switchCheckUserPG="switchCheckUserPG"
+    />
+    <check-user v-if="isCheckUserPG" @switchCheckUserPG="switchCheckUserPG"></check-user>
     <css-mask v-if="isMaskPG"></css-mask>
   </div>
 </template>
@@ -24,12 +33,18 @@ export default {
       isMainNavbarPG: false,
       isCheckUserPG: false,
       switchNavBarActive: true,
+      switchMenu: true,
     };
+  },
+  mounted() {
+    //监听详情页事件
+    this.$bus.$on("switchMenu", (res) => {
+      this.switchMenu = res;
+    });
   },
   methods: {
     switchCheckUserPG(isCheckUserPG) {
       this.isCheckUserPG = isCheckUserPG;
-      console.log(":1321");
     },
     ControlBus() {
       this.isMainNavbarPG = !this.isMainNavbarPG;
