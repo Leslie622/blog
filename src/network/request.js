@@ -2,10 +2,9 @@ import axios from "axios"
 
 export function request(config) {
   const instance = axios.create({
-    method: "post",
     baseURL: "https://4xiaer.com:8001/land",
     timeout: 3000,
-    withCredentials:true,
+    withCredentials: true,
   })
   return instance(config)
 }

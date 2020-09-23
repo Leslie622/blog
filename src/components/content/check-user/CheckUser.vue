@@ -57,6 +57,7 @@ export default {
     },
     LoginRequest() {
       request({
+        method:"post",
         url: "/login",
         data: {
           account: this.account,
@@ -64,7 +65,7 @@ export default {
         },
       }).then((res) => {
         if (res.data.code === 200) {
-          window.location.href = "/admin.html/writeblog";
+          window.location.href = "/admin.html";
         } else {
           this.open4();
         }
@@ -83,9 +84,10 @@ export default {
   top: 0;
   z-index: 4;
   width: 100vw;
+  min-width: 1650px;
   height: 100vh;
   background: url("~assets/img/bg/checkUser.png") center / 110% no-repeat;
-  animation: rollbg 20s linear  infinite;
+  animation: rollbg 5s linear infinite;
 }
 
 .content {
@@ -197,7 +199,7 @@ export default {
     background-position: 0 50%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 50% 50%;
   }
   100% {
     background-position: 0 50%;

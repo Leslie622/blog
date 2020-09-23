@@ -1,7 +1,7 @@
 <template>
   <transition appear enter-active-class="animate__animated animate__zoomIn animate__faster ">
     <el-col :span="4" class="blogMenu">
-      <el-menu default-active="2" class="el-menu-vertical-demo">
+      <el-menu default-active="1" class="el-menu-vertical-demo">
         <el-menu-item index="1">
           <i class="iconfont icon-html"></i>
           <span slot="title">Html</span>

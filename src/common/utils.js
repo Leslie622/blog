@@ -1,3 +1,6 @@
+import { request } from "network/request";
+import { Message } from 'element-ui';
+
 // 时间格式
 export function formatDateTime(value) {
   let date = new Date(value);
@@ -24,33 +27,171 @@ export function deepClone(obj) {
 
 
 //文章标签动态背景
-
 export function DynamicBG(blogTag) {
   switch (blogTag) {
     case "HTML":
       return {
         backgroundColor: "rgb(228, 79, 38)",
       };
-      break;
     case "CSS":
       return {
         backgroundColor: " rgb(21, 114, 182)",
       };
-      break;
     case "JavaScript":
       return {
         backgroundColor: "rgb(255, 192, 34)",
       };
-      break;
     case "Vue":
       return {
         backgroundColor: "rgb(65, 184, 131)",
       };
-      break;
     case "Webpack":
       return {
         backgroundColor: "rgb(85,167,221)",
       };
-      break;
   }
+}
+
+//弹框
+export function openRemovePG(index, rows) {
+  this.$confirm("此操作将删除该分类, 是否删除?", "提示", {
+    confirmButtonText: "确定",
+    cancelButtonText: "取消",
+    type: "warning",
+    beforeClose: (action, instance, done) => {
+      if (action === "confirm") {
+        //确定后，删除数据
+        request({
+          method: "post",
+          url: "/blog/category/remove",
+          data: {
+            id: rows[index].id
+          }
+        }).then((res) => {
+          //添加成功后更新数据
+          if (res.data.code === 200) {
+            request({
+              method: "get",
+              url: "/blog/category/query",
+            }).then((res) => {
+              this.tableData = res.data.data;
+              Message({
+                message: "删除成功",
+                type: "success"
+              })
+            });
+          }
+        });
+        done();
+      } else {
+        done();
+      }
+    },
+  }).catch(() => {
+  });;
+}
+
+export function openRedactPG(index, row) {
+  const h = this.$createElement;
+  this.$msgbox({
+    title: "分类编辑",
+    message: h("div", null, [
+      h("p", { class: "categoryName" }, "请输入分类名称:"),
+      h("input", {
+        class: "categoryNameInput", attrs: {
+          maxlength: 10,
+        }, key: '1'
+      }),
+      h("p", { class: "categoryDescription" }, "请输入分类描述:"),
+      h("textarea", { class: "categoryDescriptionInput" }),
+    ]),
+    showCancelButton: true,
+    confirmButtonText: "确定",
+    cancelButtonText: "取消",
+    beforeClose: (action, instance, done) => {
+      if (action === "confirm") {
+        //确定后，编辑内容
+        request({
+          method: "post",
+          url: "/blog/category/update",
+          data: {
+            id: row.id,
+            user_id: 1,
+            name: document.querySelector(".categoryNameInput").value,
+            description: document.querySelector(".categoryDescriptionInput").value,
+          }
+        }).then((res) => {
+          //添加成功后更新数据
+          if (res.data.code === 200) {
+            request({
+              method: "get",
+              url: "/blog/category/query",
+            }).then((res) => {
+              this.tableData = res.data.data;
+              Message({
+                message: "编辑成功",
+                type: "success"
+              })
+            });
+          }
+        });
+        done();
+      } else {
+        done();
+      }
+    },
+  }).catch(() => {
+  });
+}
+
+export function openAddPG() {
+  const h = this.$createElement;
+  this.$msgbox({
+    title: "分类编辑",
+    message: h("div", null, [
+      h("p", { class: "categoryName" }, "请输入分类名称:"),
+      h("input", {
+        class: "categoryNameInput", attrs: {
+          maxlength: 10,
+        }, key: '2'
+      }),
+      h("p", { class: "categoryDescription" }, "请输入分类描述:"),
+      h("textarea", { class: "categoryDescriptionInput" }),
+    ]),
+    showCancelButton: true,
+    confirmButtonText: "确定",
+    cancelButtonText: "取消",
+    beforeClose: (action, instance, done) => {
+      //点击确定后添加数据
+      if (action === "confirm") {
+        request({
+          method: "post",
+          url: "/blog/category/create",
+          data: {
+            user_id: 1,
+            name: document.querySelector(".categoryNameInput").value,
+            description: document.querySelector(".categoryDescriptionInput").value,
+          },
+        }).then((res) => {
+          //添加成功后更新数据
+          if (res.data.code === 200) {
+            request({
+              method: "get",
+              url: "/blog/category/query",
+            }).then((res) => {
+              this.tableData = res.data.data;
+              Message({
+                message: "添加成功",
+                type: "success"
+              })
+            });
+          }
+        });
+        done();
+      } else {
+        done();
+      }
+    },
+  }).catch(() => {
+  });;
 }

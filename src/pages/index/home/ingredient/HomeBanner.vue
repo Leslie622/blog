@@ -1,9 +1,9 @@
 <template>
   <div class="banner">
-      <div class="container">
-        <span class="bannerText"></span>
-        <home-banner-contact />
-      </div>
+    <div class="container">
+      <span class="bannerText"></span>
+      <home-banner-contact />
+    </div>
     <home-banner-decor />
   </div>
 </template>
@@ -33,9 +33,8 @@ export default {
   font-family: 幼圆;
   font-size: 50px;
   text-shadow: 0 0 5px #d4af37, 0 0 10px #d4af37;
-  color: rgba(255, 255, 255, .774);
-  background: url("~assets/img/bg/gaoshanshangdehuang-1.jpg") -160px -280px /
-  110% 110% no-repeat fixed;
+  color: rgba(255, 255, 255, 0.774);
+  background: url("~assets/img/bg/gaoshanshangdehuang-1.jpg") -160px/110% no-repeat ;
   clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 77%, 0 100%, 0 0);
 }
 
@@ -53,5 +52,4 @@ export default {
 .bannerText {
   margin-left: 5px;
 }
-
 </style>

@@ -23,6 +23,7 @@ export default {
       navbarTab: [
         { title: "写博客", path: "/admin.html/writeblog" },
         { title: "写日记", path: "/admin.html/writediary" },
+        { title: "管理页", path: "/admin.html/ManagementPG" },
       ],
     };
   },
@@ -35,7 +36,6 @@ export default {
   top: 10px;
   right: 10px;
   left: 10px;
-  min-width: 1800px;
   height: 65px;
   padding: 0 100px;
   border-radius: 20px;

@@ -16,6 +16,7 @@ body {
   user-select: none;
 }
 
-.router-link-exact-active, .router-link-active {
+
+.router-link-exact-active, .router-link-active ,a{
   color: #000;
 }
