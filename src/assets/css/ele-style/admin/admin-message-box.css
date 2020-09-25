@@ -20,10 +20,15 @@
 }
 
 .categoryNameInput, .categoryDescriptionInput {
-  width: 250px;
-  min-width: 250px;
-  max-width: 250px;
-  height: 30px;
+  min-width: 230px;
+  max-width: 230px;
+  padding: 10px;
+  height: 25px;
   margin: 20px 0;
   outline: none;
+}
+
+
+.categoryDescriptionInput {
+  height: 50px;
 }

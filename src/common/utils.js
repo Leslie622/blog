@@ -25,7 +25,6 @@ export function deepClone(obj) {
   return newObj
 }
 
-
 //文章标签动态背景
 export function DynamicBG(blogTag) {
   switch (blogTag) {
@@ -116,7 +115,7 @@ export function openRedactPG(index, row) {
           url: "/blog/category/update",
           data: {
             id: row.id,
-            user_id: 1,
+            user_id: this.$store.state.user_id,
             name: document.querySelector(".categoryNameInput").value,
             description: document.querySelector(".categoryDescriptionInput").value,
           }
@@ -147,7 +146,7 @@ export function openRedactPG(index, row) {
 export function openAddPG() {
   const h = this.$createElement;
   this.$msgbox({
-    title: "分类编辑",
+    title: "增加分类",
     message: h("div", null, [
       h("p", { class: "categoryName" }, "请输入分类名称:"),
       h("input", {
@@ -168,7 +167,7 @@ export function openAddPG() {
           method: "post",
           url: "/blog/category/create",
           data: {
-            user_id: 1,
+            user_id: this.$store.state.user_id,
             name: document.querySelector(".categoryNameInput").value,
             description: document.querySelector(".categoryDescriptionInput").value,
           },
@@ -194,4 +193,44 @@ export function openAddPG() {
     },
   }).catch(() => {
   });;
+}
+
+
+// 登陆请求
+export function LoginRequest() {
+  request({
+    method: "post",
+    url: "/login",
+    data: {
+      account: this.account,
+      password: this.password,
+    },
+  }).then((res) => {
+    if (res.data.code === 200) {
+      //保存用户id
+      window.localStorage.setItem("user_id", res.data.data.id);
+      window.location.href = "/admin.html";
+    } else {
+      Notification({
+        type: "error",
+        title: "输入有误",
+        message: "您输入的账号或密码有错误",
+        duration: 3000,
+      });
+    }
+  });
+}
+
+
+// 文章分类过滤器
+
+
+export function articleCategoryFilter(arr, cate_ID) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].cate_id === cate_ID) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
 }

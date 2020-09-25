@@ -6,7 +6,12 @@
   >
     <div id="navbar">
       <div class="container">
-        <site-logo @click.native="controlCheckUserPG();ControlBus()" />
+        <site-logo
+          @click.native="
+            controlCheckUserPG();
+            ControlBus();
+          "
+        />
         <nav-bar-category @click.native="ControlBus" />
       </div>
     </div>
@@ -25,7 +30,6 @@ export default {
   methods: {
     controlCheckUserPG() {
       this.$emit("switchCheckUserPG", true);
-      console.log("1231");
     },
     ControlBus() {
       this.$emit("ControlBus");

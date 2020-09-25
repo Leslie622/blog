@@ -1,6 +1,9 @@
 <template>
   <div class="writeBlog">
-    <transition appear enter-active-class="animate__animated animate__zoomInDown">
+    <transition
+      appear
+      enter-active-class="animate__animated animate__zoomInDown"
+    >
       <mavon-editor
         v-model="blogData.blogContent"
         class="mavonEditor"
@@ -9,14 +12,21 @@
         ref="md"
       />
     </transition>
-    <transition appear enter-active-class="animate__animated animate__zoomInDown">
+    <transition
+      appear
+      enter-active-class="animate__animated animate__zoomInDown"
+    >
       <div class="sidebar">
         <div class="operation">
           <div class="save btn">保存草稿</div>
           <div class="issue btn" @click="issue">发布博客</div>
         </div>
         <div class="blogTitleContent">
-          <input type="text" class="blogTitleInput" v-model="blogData.blogTitle" />
+          <input
+            type="text"
+            class="blogTitleInput"
+            v-model="blogData.blogTitle"
+          />
           <div class="hintText">博客标题</div>
         </div>
         <div class="blogTags">
@@ -28,11 +38,46 @@
             allow-create
             placeholder="请选择或输入"
             default-first-option
-            @visible-change="hintTextAnimation = !hintTextAnimation"
+            @visible-change="isTaghintTextAnimation = !isTaghintTextAnimation"
           >
-            <el-option v-for="item in tags" :key="item.value" :value="item.value"></el-option>
+            <el-option
+              v-for="item in tags"
+              :key="item.value"
+              :value="item.value"
+            ></el-option>
           </el-select>
-          <div class="hintText" :class="hintTextAnimation?'hintTextAnimation':''">博客标签</div>
+          <div
+            class="hintText"
+            :class="isTaghintTextAnimation ? 'isTaghintTextAnimation' : ''"
+          >
+            博客标签
+          </div>
+        </div>
+        <div class="blogCategory">
+          <el-select
+            placeholder="请选择"
+            v-model="blogData.blogCategoryID"
+            class="selectTag"
+            @visible-change="
+              isCategoryhintTextAnimation = !isCategoryhintTextAnimation
+            "
+          >
+            <el-option
+              v-for="item in category"
+              :key="item.id"
+              :label="item.name"
+              :value="item.id"
+            >
+            </el-option>
+          </el-select>
+          <div
+            class="hintText"
+            :class="
+              isCategoryhintTextAnimation ? 'isCategoryhintTextAnimation' : ''
+            "
+          >
+            博客分类
+          </div>
         </div>
       </div>
     </transition>
@@ -41,6 +86,7 @@
  
 <script>
 import { formatDateTime, deepClone } from "common/utils";
+import { request } from "../../../network/request";
 
 export default {
   name: "",
@@ -52,7 +98,9 @@ export default {
         blogContentHTML: "",
         blogTags: "",
         blogPutoutDate: "",
+        blogCategoryID: "",
       },
+      category: null,
       tags: [
         {
           value: "HTML",
@@ -71,17 +119,34 @@ export default {
         },
       ],
       blogDataList: [],
-      hintTextAnimation: false,
+      isTaghintTextAnimation: false,
+      isCategoryhintTextAnimation: false,
     };
+  },
+  created() {
+    //请求分类数据
+    request({
+      url: "/blog/category/query",
+    }).then((res) => {
+      this.category = res.data.data;
+    });
   },
   methods: {
     issue() {
+      // 储存markdown的HTML格式
       this.blogData.blogContentHTML = this.$refs.md.d_render;
-      console.log(this.blogData.blogContentHTML);
-      this.blogData.blogPutoutDate = formatDateTime(new Date());
-      let blogData = deepClone(this.blogData);
-      this.blogDataList.push(blogData);
-      localStorage.setItem("blogDatas", JSON.stringify(this.blogDataList));
+      request({
+        method: "post",
+        url: "/blog/create",
+        data: {
+          user_id: this.$store.state.user_id,
+          cate_id: this.blogData.blogCategoryID,
+          title: this.blogData.blogTitle,
+          content: this.blogData.blogContentHTML,
+        },
+      }).then((res) => {
+        console.log(res);
+      });
     },
   },
 };
@@ -157,7 +222,8 @@ export default {
 }
 
 .blogTitleContent,
-.blogTags {
+.blogTags,
+.blogCategory {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -186,7 +252,8 @@ export default {
   transform: translateX(105px);
 }
 
-.hintTextAnimation {
+.isTaghintTextAnimation,
+.isCategoryhintTextAnimation {
   transform: translateX(105px);
 }
 </style>

@@ -9,7 +9,6 @@ export function request(config) {
   return instance(config)
 }
 
-
   //拦截器
 
   // //请求拦截

@@ -28,7 +28,11 @@ Vue.config.productionTip = false
 // 事件总线
 Vue.prototype.$bus = new Vue()
 
+//vuex
+import store from "../../store/index"
+
 new Vue({
   render: h => h(Blog),
-  router
+  router,
+  store
 }).$mount('#blog')

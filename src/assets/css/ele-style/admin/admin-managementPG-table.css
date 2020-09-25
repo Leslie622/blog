@@ -20,10 +20,17 @@
   height: 80px;
 }
 
+.ManagementPG .el-table__row:hover{
+  background-color: transparent;
+}
+
+/* .el-table--enable-row-hover .el-table__body tr:hover > td{
+} */
+
 .ManagementPG .el-tag {
   width: 60px;
   border: none;
-  font-size: 22px;
+  font-size: 16px;
   color: black;
   background-color: transparent;
 }
@@ -51,4 +58,10 @@
   border-color: #f56c6c;
   color: #fff;
   background: #f56c6c;
+}
+
+.ManagementPG .el-button--primary:focus, .ManagementPG .el-button--primary:hover{
+  background-color: #409EFF;
+  border: 1px solid #409EFF;
+  color: white;
 }

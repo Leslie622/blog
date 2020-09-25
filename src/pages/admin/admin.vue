@@ -13,6 +13,11 @@ export default {
   data() {
     return {};
   },
+  created() {
+    //localStorage -> 获取用户id -> 保存到 -> vuex
+    let user_id = window.localStorage.getItem("user_id");
+    this.$store.commit("saveUserId", +user_id);
+  },
   components: {
     AdminNavBar,
   },

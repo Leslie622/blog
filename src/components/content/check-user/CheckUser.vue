@@ -13,7 +13,9 @@
                 <input type="text" class="verifyInput" v-model="password" />
                 <div class="verifyText">请输入密码</div>
               </div>
-              <div class="enter checkUserButton" @click="LoginRequest">Enter</div>
+              <div class="enter checkUserButton" @click="LoginRequest">
+                Enter
+              </div>
             </div>
           </div>
           <div class="hint">
@@ -23,10 +25,11 @@
                 <br />
                 <br />请返回
               </div>
-              <div class="back checkUserButton" @click="controlCheckUserPG">Back</div>
+              <div class="back checkUserButton" @click="controlCheckUserPG">
+                Back
+              </div>
             </div>
           </div>
-          <el-button plain @click="open4">错误</el-button>
         </div>
       </transition>
     </div>
@@ -35,6 +38,9 @@
  
 <script>
 import { request } from "../../../network/request";
+import { Notification } from "element-ui";
+import { LoginRequest } from "../../../common/utils";
+
 import axios from "axios";
 export default {
   name: "",
@@ -45,31 +51,9 @@ export default {
     };
   },
   methods: {
+    LoginRequest,
     controlCheckUserPG() {
       this.$emit("switchCheckUserPG", false);
-    },
-    open4() {
-      this.$notify.error({
-        title: "输入有误",
-        message: "您输入的账号或密码有错误",
-        duration: 2000,
-      });
-    },
-    LoginRequest() {
-      request({
-        method:"post",
-        url: "/login",
-        data: {
-          account: this.account,
-          password: this.password,
-        },
-      }).then((res) => {
-        if (res.data.code === 200) {
-          window.location.href = "/admin.html";
-        } else {
-          this.open4();
-        }
-      });
     },
   },
 };

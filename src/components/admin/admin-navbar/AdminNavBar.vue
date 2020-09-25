@@ -1,18 +1,16 @@
 <template>
-  <transition appear enter-active-class="animate__animated animate__zoomInDown">
-    <div class="adminNavbar">
-      <div class="MenuContainer">
-        <router-link
-          v-for="(item,index) in navbarTab"
-          :to="item.path"
-          class="menuRouterLink"
-          :key="index"
-        >
-          <div class="MenuItem">{{item.title}}</div>
-        </router-link>
-      </div>
+  <div class="adminNavbar">
+    <div class="MenuContainer">
+      <router-link
+        v-for="(item,index) in navbarTab"
+        :to="item.path"
+        class="menuRouterLink"
+        :key="index"
+      >
+        <div class="MenuItem">{{item.title}}</div>
+      </router-link>
     </div>
-  </transition>
+  </div>
 </template>
  
 <script>
