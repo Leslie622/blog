@@ -1,10 +1,13 @@
 <template>
-  <transition appear enter-active-class="animate__animated animate__zoomIn animate__faster">
+  <transition
+    appear
+    enter-active-class="animate__animated animate__zoomIn animate__faster"
+  >
     <div class="wrapper">
       <div class="articleList">
         <div class="articleListContainer">
           <articles-list-item
-            v-for="(item,index) in blogDatas"
+            v-for="(item, index) in blogDatas"
             :key="index"
             :blogData="item"
             class="articlesListItem"
@@ -12,7 +15,15 @@
         </div>
       </div>
       <div class="Pagination">
-        <article-pagination></article-pagination>
+        <el-pagination
+          background
+          layout="prev, pager, next"
+          prev-text="上一页"
+          next-text="下一页"
+          :total="60"
+          ppager-count="15"
+          class="articlePagination"
+        ></el-pagination>
       </div>
     </div>
   </transition>
@@ -20,7 +31,6 @@
  
 <script>
 import ArticlesListItem from "./ArticlesListItem";
-import ArticlePagination from "./ArticlePagination";
 
 export default {
   name: "",
@@ -31,12 +41,12 @@ export default {
   },
   components: {
     ArticlesListItem,
-    ArticlePagination,
   },
 };
 </script>
 
 <style scoped>
+@import "~assets/css/ele-style/articles-pagination.css";
 .wrapper {
   display: flex;
   box-sizing: border-box;

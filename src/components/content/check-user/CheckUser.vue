@@ -10,6 +10,7 @@
             <div class="verifyContent">
               <div class="formContent">
                 <input type="text" class="verifyInput" v-model="account" />
+                <div class="verifyText">请输入账号</div>
                 <input type="text" class="verifyInput" v-model="password" />
                 <div class="verifyText">请输入密码</div>
               </div>
@@ -38,7 +39,6 @@
  
 <script>
 import { request } from "../../../network/request";
-import { Notification } from "element-ui";
 import { LoginRequest } from "../../../common/utils";
 
 import axios from "axios";
@@ -70,6 +70,7 @@ export default {
   width: 100vw;
   min-width: 1650px;
   height: 100vh;
+  font-family: 幼圆;
   background: url("~assets/img/bg/checkUser.png") center / 110% no-repeat;
   animation: rollbg 5s linear infinite;
 }
@@ -79,7 +80,6 @@ export default {
   width: 800px;
   height: 480px;
   border-radius: 10px;
-  font-family: 幼圆;
   text-align: center;
   box-shadow: 10px 10px 48px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
   background-color: transparent;
@@ -101,15 +101,18 @@ export default {
   clip-path: polygon(100% 0, 48% 0, 55% 100%, 100% 100%);
 }
 
-.hintContent {
+.hintContent,
+.verifyContent {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
+  align-content: space-between;
   justify-content: center;
-  top: 120px;
+  top: 100px;
   right: 45px;
   width: 300px;
-  height: 300px;
+  height: 250px;
+  text-align: center;
 }
 
 .hintText {
@@ -145,11 +148,12 @@ export default {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
+  align-content: space-between;
   justify-content: center;
-  top: 190px;
+  top: 100px;
   left: 45px;
   width: 300px;
-  height: 200px;
+  height: 250px;
   text-align: center;
 }
 
@@ -165,6 +169,7 @@ export default {
 .verifyInput {
   width: 200px;
   height: 40px;
+  margin-top: 20px;
   padding: 0 10px;
   border: none;
   border-radius: 5px;
@@ -175,7 +180,7 @@ export default {
 
 .verifyInput:focus + div {
   opacity: 1;
-  transform: translateY(-105px);
+  transform: translateY(-75px);
 }
 
 @keyframes rollbg {

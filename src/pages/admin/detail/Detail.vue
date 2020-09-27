@@ -27,21 +27,22 @@ export default {
       blogContentHTML: null,
     };
   },
-  created() {
-    //获取数据
-    console.log(this.$route.query.id);
+  beforeCreate() {
+    //创建之前完成时关闭导航
+    this.$bus.$emit("switchMenu", false);
     request({
       method: "get",
       url: `/blog/detail?id=${this.$route.query.id}`,
     }).then((res) => {
       this.blogContentHTML = res.data.data.content;
     });
-    //创建完成时关闭导航
-    this.$bus.$emit("switchMenu", false);
   },
-  mounted() {
-    let ul = document.querySelectorAll("ul")[0].cloneNode(true);
-    let h3 = document.querySelectorAll("h3")[0].cloneNode(true);
+  created() {
+    //获取数据
+  },
+  updated() {
+    let ul = document.querySelectorAll("ul")[0];
+    let h3 = document.querySelectorAll("h3")[0];
     let mulu = document.querySelector(".toc");
     mulu.appendChild(h3);
     mulu.appendChild(ul);

@@ -1,6 +1,11 @@
 <template>
   <div class="articleCategor">
-    <el-table :data="tableData" style="width: 100%" class="CategorTable">
+    <el-table
+      :data="tableData"
+      style="width: 100%"
+      class="CategorTable"
+      @row-click="viewTheCategory"
+    >
       <el-table-column label="分类名称" width="160">
         <template slot-scope="scope">
           <div slot="reference" class="name-wrapper">
@@ -15,7 +20,7 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column label="操作" width="240">
+      <el-table-column label="操作" width="200">
         <template slot-scope="scope">
           <el-button size="mini" @click="redact(scope.$index, scope.row)"
             >编辑</el-button
@@ -25,12 +30,6 @@
             type="danger"
             @click.native.prevent="deleteRow(scope.$index, tableData)"
             >删除</el-button
-          >
-          <el-button
-            size="mini"
-            type="primary"
-            @click="viewTheCategory(scope.$index, scope.row)"
-            >查看</el-button
           >
         </template>
       </el-table-column>
@@ -54,10 +53,13 @@ export default {
   data() {
     return {
       tableData: [],
+      user_id: "",
     };
   },
   created() {
-    //请求全部数据
+    //获取 - 用户ID
+    this.user_id = this.$store.state.user_id;
+    //请求 - 分类数据
     this.requestAllData();
   },
   methods: {
@@ -67,7 +69,7 @@ export default {
     requestAllData() {
       request({
         method: "get",
-        url: "/blog/category/query",
+        url: `/blog/category/query?user_id=${this.user_id}`,
       }).then((res) => {
         this.tableData = res.data.data;
       });
@@ -80,13 +82,14 @@ export default {
     deleteRow(index, rows) {
       this.openRemovePG(index, rows);
     },
+    //查看
+    viewTheCategory(row) {
+      this.$bus.$emit("viewTheCategory", row.id);
+    },
     //添加
     addCategory() {
       this.openAddPG();
     },
-    viewTheCategory(index,row){
-      this.$bus.$emit("viewTheCategory",row.id)
-    }
   },
 };
 </script>
@@ -98,7 +101,7 @@ export default {
 .articleCategor {
   display: flex;
   justify-content: center;
-  min-width: 560px;
+  min-width: 520px;
   margin-right: 10px;
   border-radius: 20px;
   font-family: 幼圆;

@@ -126,7 +126,7 @@ export default {
   created() {
     //请求分类数据
     request({
-      url: "/blog/category/query",
+      url: `/blog/category/query?user_id=${this.$store.state.user_id}`,
     }).then((res) => {
       this.category = res.data.data;
     });

@@ -1,5 +1,6 @@
 .ManagementPG .el-table {
   background-color: transparent;
+  min-height: 798px;
 }
 
 .ManagementPG .el-table th, .el-table tr {
@@ -17,15 +18,12 @@
 }
 
 .ManagementPG .el-table__row {
-  height: 80px;
+  height: 75px;
 }
 
-.ManagementPG .el-table__row:hover{
+.ManagementPG .el-table__row:hover {
   background-color: transparent;
 }
-
-/* .el-table--enable-row-hover .el-table__body tr:hover > td{
-} */
 
 .ManagementPG .el-tag {
   width: 60px;
@@ -60,8 +58,8 @@
   background: #f56c6c;
 }
 
-.ManagementPG .el-button--primary:focus, .ManagementPG .el-button--primary:hover{
-  background-color: #409EFF;
-  border: 1px solid #409EFF;
+.ManagementPG .el-button--primary:focus, .ManagementPG .el-button--primary:hover {
+  border: 1px solid #409eff;
   color: white;
+  background-color: #409eff;
 }
