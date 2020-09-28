@@ -54,6 +54,7 @@ export default {
   align-items: flex-start;
   justify-content: center;
   width: 60%;
+  min-width: 1150px;
   height: calc(100vh - 20px);
   margin: 10px 15px 10px 10px;
   padding: 15px;

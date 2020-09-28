@@ -16,22 +16,18 @@ const routes = [
   },
   {
     path: '/admin.html/writeblog',
-    name: "WriteBlog",
-    component: WriteBlog
+    component: WriteBlog,
   },
   {
     path: '/admin.html/writediary',
-    name: "WriteDiary",
-    component: WriteDiary
+    component: WriteDiary,
   },
   {
     path: '/admin.html/ManagementPG',
-    name: "ManagementPG",
-    component: ManagementPG
+    component: ManagementPG,
   },
   {
     path: '/admin.html/Detail',
-    name: "Detail",
     component: Detail,
   },
 ]

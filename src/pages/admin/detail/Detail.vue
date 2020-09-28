@@ -30,15 +30,13 @@ export default {
   beforeCreate() {
     //创建之前完成时关闭导航
     this.$bus.$emit("switchMenu", false);
+    //获取数据
     request({
       method: "get",
       url: `/blog/detail?id=${this.$route.query.id}`,
     }).then((res) => {
       this.blogContentHTML = res.data.data.content;
     });
-  },
-  created() {
-    //获取数据
   },
   updated() {
     let ul = document.querySelectorAll("ul")[0];
@@ -49,7 +47,7 @@ export default {
   },
   destroyed() {
     //销毁完成时渲染导航
-    this.$bus.$emit("switchMenu", true);
+    // this.$bus.$emit("switchMenu", true);
   },
 };
 </script>

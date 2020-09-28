@@ -31,10 +31,6 @@ export default {
           img: require("assets/img/contact/qqerweima.png"),
           icon: "#icon-QQ",
         },
-        {
-          img: require("assets/img/contact/weixinerweima.png"),
-          icon: "#icon-youxiang",
-        },
       ],
     };
   },

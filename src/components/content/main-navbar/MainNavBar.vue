@@ -64,6 +64,6 @@ export default {
 }
 
 .animate__slideInRight {
-  --animate-duration: 0.3s;
+  --animate-duration: 0.2s;
 }
 </style>

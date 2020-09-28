@@ -45,7 +45,6 @@ export default {
     itemClick() {
       //跳转到详情页并携带内容
       this.$router.push({ path: "/detail" });
-      // , query: { blogContentHTML: this.blogData.blogContentHTML }
     },
   },
 };
@@ -55,7 +54,7 @@ export default {
 .Article {
   display: flex;
   width: 100%;
-  min-width: 1080px;
+  min-width: 1060px;
   height: 380px;
   border: 1px solid rgb(231, 231, 231);
   border-radius: 10px;
@@ -63,11 +62,11 @@ export default {
   background-color: white;
   overflow: hidden;
   cursor: pointer;
-  transition: box-shadow 0.3s;
+  transition: box-shadow .3s;
 }
 
 .Article:hover {
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, .2);
 }
 
 .articleImg {
@@ -122,9 +121,9 @@ i {
   font-size: 25px;
 }
 
-.pubdate,
-.tagContent {
+.pubdate, .tagContent {
   display: flex;
   align-items: center;
 }
+
 </style>
