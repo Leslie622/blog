@@ -45,10 +45,6 @@ export default {
     mulu.appendChild(h3);
     mulu.appendChild(ul);
   },
-  destroyed() {
-    //销毁完成时渲染导航
-    // this.$bus.$emit("switchMenu", true);
-  },
 };
 </script>
 
@@ -72,13 +68,14 @@ export default {
 }
 
 .content {
-  width: 50%;
+  width: 60%;
   margin-left: 550px;
   font-family: 幼圆;
 }
 
 .articleContent {
   z-index: 0;
+  margin-top: 30px;
   padding: 0 20px 80px;
   font-family: 幼圆;
   font-size: 18px;

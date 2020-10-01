@@ -2,7 +2,7 @@
   <div class="Article" @click="itemClick">
     <img src="~assets/img/myAvatar/myAvatar.jpg" alt class="articleImg" />
     <div class="content">
-      <div class="articleTitle">{{blogData.blogTitle}}</div>
+      <div class="articleTitle">{{ blogData.title }}</div>
       <div class="excerpt">
         <div class="excerptContent">
           在触发DOM上的某个事件时，会产生一个事件对象event，这个事件对象包含着所有与事件有关的信息，例如事件是冒泡还是捕获，事件的目标，鼠标坐标，键盘按下的键，等等信息，不要太好用
@@ -12,7 +12,7 @@
       <div class="meta">
         <div class="pubdate">
           <i class="el-icon-time"></i>
-          <span>{{blogData.blogPutoutDate}}</span>
+          <span>{{ blogData.create_time }}</span>
         </div>
         <div class="tagContent">
           <i class="el-icon-collection-tag"></i>
@@ -20,7 +20,8 @@
             v-for="blogTag in blogData.blogTags"
             class="blogTag"
             :style="DynamicBG(blogTag)"
-          >{{blogTag}}</span>
+            >{{ blogTag }}</span
+          >
         </div>
       </div>
     </div>
@@ -40,11 +41,19 @@ export default {
   data() {
     return {};
   },
+  created() {
+    console.log(this.blogData);
+  },
   methods: {
     DynamicBG,
     itemClick() {
-      //跳转到详情页并携带内容
-      this.$router.push({ path: "/detail" });
+      //跳转到详情页并携带文章ID
+      console.log(this.blogData.id);
+      let Detail = this.$router.resolve({
+        path: "/Detail",
+        query: { id: this.blogData.id },
+      });
+      window.open(Detail.href, "_blank");
     },
   },
 };
@@ -62,11 +71,11 @@ export default {
   background-color: white;
   overflow: hidden;
   cursor: pointer;
-  transition: box-shadow .3s;
+  transition: box-shadow 0.3s;
 }
 
 .Article:hover {
-  box-shadow: 0 2px 15px rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
 .articleImg {
@@ -121,9 +130,9 @@ i {
   font-size: 25px;
 }
 
-.pubdate, .tagContent {
+.pubdate,
+.tagContent {
   display: flex;
   align-items: center;
 }
-
 </style>

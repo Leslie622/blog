@@ -27,28 +27,23 @@ export default {
       blogContentHTML: null,
     };
   },
-  created() {
+  beforeCreate() {
+    //创建之前完成时关闭导航
+    this.$bus.$emit("switchMenu", false);
     //获取数据
-    console.log(this.$route.query.id);
     request({
       method: "get",
       url: `/blog/detail?id=${this.$route.query.id}`,
     }).then((res) => {
       this.blogContentHTML = res.data.data.content;
     });
-    //创建完成时关闭导航
-    this.$bus.$emit("switchMenu", false);
   },
-  mounted() {
-    let ul = document.querySelectorAll("ul")[0].cloneNode(true);
-    let h3 = document.querySelectorAll("h3")[0].cloneNode(true);
+  updated() {
+    let ul = document.querySelectorAll("ul")[0];
+    let h3 = document.querySelectorAll("h3")[0];
     let mulu = document.querySelector(".toc");
     mulu.appendChild(h3);
     mulu.appendChild(ul);
-  },
-  destroyed() {
-    //销毁完成时渲染导航
-    this.$bus.$emit("switchMenu", true);
   },
 };
 </script>
@@ -58,6 +53,7 @@ export default {
 
 .container {
   height: 100vh;
+  font-family: 幼圆;
   overflow-y: scroll;
 }
 
@@ -73,13 +69,13 @@ export default {
 }
 
 .content {
-  width: 50%;
+  width: 55%;
   margin-left: 550px;
-  font-family: 幼圆;
 }
 
 .articleContent {
   z-index: 0;
+  margin-top: 30px;
   padding: 0 20px 80px;
   font-family: 幼圆;
   font-size: 18px;

@@ -16,6 +16,7 @@
     "marked": "^1.1.1",
     "mavon-editor": "^2.9.0",
     "normalize.css": "^8.0.1",
+    "three": "^0.121.1",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3",
     "vuex": "^3.5.1"
