@@ -12,18 +12,13 @@
       @ControlBus="ControlBus"
       @switchCheckUserPG="switchCheckUserPG"
     />
-    <check-user v-if="isCheckUserPG" @switchCheckUserPG="switchCheckUserPG"></check-user>
     <css-mask v-if="isMaskPG"></css-mask>
   </div>
 </template>
 <script>
 import MainNavBar from "components/content/main-navbar/MainNavBar";
 import SwitchNavBar from "components/content/switch-main-navbar/SwitchNavBar";
-import CheckUser from "components/content/check-user/CheckUser";
 import CssMask from "components/common/mask/CssMask";
-
-// 粒子插件
-import VueParticles from "components/common/vue-particles/VueParticles";
 
 export default {
   name: "Blog",
@@ -54,8 +49,6 @@ export default {
   },
   components: {
     MainNavBar,
-    VueParticles,
-    CheckUser,
     SwitchNavBar,
     CssMask,
   },
@@ -64,5 +57,5 @@ export default {
 
 <style>
 /* 样式初始化 */
-@import "../../assets/css/base.css";
+@import "~assets/css/base.css";
 </style>

@@ -18,8 +18,8 @@
 </template>
  
 <script>
-import marked from "marked";
 import { request } from "network/request";
+
 export default {
   name: "",
   data() {
@@ -53,6 +53,7 @@ export default {
 
 .container {
   height: 100vh;
+  font-family: 幼圆;
   overflow-y: scroll;
 }
 
@@ -68,9 +69,8 @@ export default {
 }
 
 .content {
-  width: 60%;
+  width: 55%;
   margin-left: 550px;
-  font-family: 幼圆;
 }
 
 .articleContent {

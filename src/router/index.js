@@ -2,11 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // 懒加载
-const BlogHome = () => import('../pages/index/home/BlogHome.vue')
-const MainBlog = () => import('../pages/index/mainblog/MainBlog.vue')
-const Diary = () => import('../pages/index/diary/Diary.vue')
-const Mark = () => import('../pages/index/mark/Mark.vue')
-const Detail = () => import('../pages/index/detail/Detail.vue')
+const BlogHome = () => import('../views/home/BlogHome.vue')
+const MainBlog = () => import('../views/mainblog/MainBlog.vue')
+const Diary = () => import('../views/diary/Diary.vue')
+const Mark = () => import('../views/mark/Mark.vue')
+const Detail = () => import('../views/detail/Detail.vue')
 
 Vue.use(VueRouter)
 
@@ -54,7 +54,6 @@ const router = new VueRouter({
 
 
 router.beforeEach((to, from, next) => {
-  /* 路由发生变化修改页面title */
   if (to.meta.title) {
     document.title = to.meta.title || '首页'
   }

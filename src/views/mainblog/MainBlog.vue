@@ -6,8 +6,8 @@
 </template>
  
 <script>
-import BlogMenu from "../mainblog/ingredient/BlogMenu";
-import ArticleList from "../mainblog/ingredient/ArticleList";
+import BlogMenu from "./ingredient/BlogMenu";
+import ArticleList from "./ingredient/ArticleList";
 
 import { request } from "network/request";
 

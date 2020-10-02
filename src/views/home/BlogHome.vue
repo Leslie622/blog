@@ -6,8 +6,9 @@
 </template>
  
 <script>
-import HomeBanner from "../home/ingredient/HomeBanner"
-import HotArticles from "../home/ingredient/HotArticles"
+import HomeBanner from "./ingredient/HomeBanner"
+import HotArticles from "./ingredient/HotArticles"
+
 export default {
   name: "BlogHome",
   data() {

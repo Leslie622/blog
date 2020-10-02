@@ -6,7 +6,7 @@
 </template>
  
 <script>
-import BackTop from "../../../components/common/eleUI-backTop/BackTop"
+import BackTop from "components/common/eleUI-backTop/BackTop"
 export default {
   name: "",
   components:{

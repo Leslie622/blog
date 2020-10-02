@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Blog from './Blog.vue'
-import router from "../../router/index"
+import router from "./router/index"
 
 //引入markdowm编辑器
 import mavonEditor from 'mavon-editor'
@@ -18,10 +18,6 @@ import 'animate.css';
 // 阿里图标库
 import "common/iconfont"
 
-// vue背景特效
-import VueParticles from 'vue-particles'
-Vue.use(VueParticles)
-
 // 全局配置
 Vue.config.productionTip = false
 
@@ -29,7 +25,7 @@ Vue.config.productionTip = false
 Vue.prototype.$bus = new Vue()
 
 //vuex
-import store from "../../store/index"
+import store from "./store/index"
 
 new Vue({
   render: h => h(Blog),
