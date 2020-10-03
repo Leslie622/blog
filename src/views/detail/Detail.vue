@@ -12,6 +12,7 @@
           :boxShadow="false"
           class="articleContent"
         />
+
       </div>
     </div>
   </transition>
@@ -74,10 +75,11 @@ export default {
 }
 
 .articleContent {
+  color: #333;
   z-index: 0;
   margin-top: 30px;
   padding: 0 20px 80px;
-  font-family: 幼圆;
-  font-size: 18px;
+  font-family:幼圆;
+  font-size: 15px;
 }
 </style>
