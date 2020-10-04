@@ -1,25 +1,28 @@
 <template>
   <div class="home">
-    <home-banner></home-banner>
-    <hot-articles />
+    <router-view />
+    <home-menu />
   </div>
 </template>
  
 <script>
-import HomeBanner from "./ingredient/HomeBanner"
-import HotArticles from "./ingredient/HotArticles"
+import HomeMenu from "./ingredient/HomeMenu";
 
 export default {
   name: "BlogHome",
   data() {
     return {};
   },
-  components:{
-    HomeBanner,
-    HotArticles,
-  }
+  components: {
+    HomeMenu,
+  },
 };
 </script>
 
 <style scoped>
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
